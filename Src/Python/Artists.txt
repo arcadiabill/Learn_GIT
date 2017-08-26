@@ -1,0 +1,9 @@
+GetExtensions  Rev 0 (25 SEP 2014 whr)
+
+
+   Searching \\WDMYCLOUD\bill\Seagate\Recovered\Special Lost Files(Lab)\Artists for extensions and their number.
+
+   Extensions   Number  AudioExt
+   .mp3         18,340     *
+
+   18,340 Audio Files found.

@@ -1,0 +1,5 @@
+
+Physical Address    Transport Name                                            
+=================== ==========================================================
+90-E6-BA-EC-50-E7   \Device\Tcpip_{6ACCD4A4-CD6B-46F7-A603-50C49241E33C}      
+00-26-82-41-3D-14   \Device\Tcpip_{F47475F8-7F81-4C62-9A13-65FD75A2CD8D}      

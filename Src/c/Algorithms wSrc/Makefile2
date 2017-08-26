@@ -1,0 +1,8 @@
+all::
+	gcc-4 -Wall -std=c99 -g catalan.c -o catalan.exe
+	cl /W4 perm.c
+	./catalan.exe
+	./perm.exe
+
+clean::
+	rm -f *.obj *.o *.exe

@@ -1,0 +1,19 @@
+(*
+// 2013-Jan-05 Sat 13:35
+// Plot inequalities region and optimal function, with interactive manipulate.
+// Only for 2D plots?
+// from http://reference.wolfram.com/mathematica/howto/AddTransparencyToPlots.html
+*)
+
+Show[
+  ContourPlot[2*x + y, {x, -1, 5}, {y, -1, 5}, 
+    ContourLabels -> All, ColorFunction -> "CoffeeTones" ], 
+  RegionPlot[x < 4 && y < 4 && x + y > 4, {x, -1, 5}, {y, -1, 5}]
+]
+
+Manipulate[
+ RegionPlot[{x - y >= t, x + y >= s}, {x, -3 Pi, 3 Pi}, {y, -3 Pi, 
+   3 Pi}, PlotPoints -> 30, 
+  PlotStyle -> {Directive[Red], Directive[Blue, Opacity[0.5]]}],
+ Style["Solving x-y>=t, x+y>=s", Bold, 12],
+ {{s, 0}, -20, 20}, {{t, 0}, -20, 20}]

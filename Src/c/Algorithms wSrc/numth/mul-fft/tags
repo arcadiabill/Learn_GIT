@@ -1,0 +1,46 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AddBigInt	bigint.c	/^void AddBigInt(BigInt * A, BigInt * B, BigInt * C) {$/;"	f
+AllocatedMemory	fft.c	/^long AllocatedMemory;$/;"	v
+ArrayFFT0	fft.c	/^Complex * ArrayFFT0, * ArrayFFT1;$/;"	v
+ArrayFFT1	fft.c	/^Complex * ArrayFFT0, * ArrayFFT1;$/;"	v
+BASE	bigint.h	14;"	d
+BigInt	bigint.h	/^} BigInt;$/;"	t	typeref:struct:BigIntTag
+BigIntTag	bigint.h	/^typedef struct BigIntTag {$/;"	s
+BigInt_h	bigint.h	2;"	d
+BinarySplittingE	e2718.c	/^void BinarySplittingE(long N0, long N1, BigInt * P, BigInt * Q) {$/;"	f
+Coef	bigint.h	/^  Real * Coef;$/;"	m	struct:BigIntTag
+Complex	fft.c	/^} Complex;$/;"	t	typeref:struct:ComplexTag	file:
+ComplexCoef	fft.c	/^Complex * ComplexCoef; $/;"	v
+ComplexTag	fft.c	/^typedef struct ComplexTag {$/;"	s	file:
+Convolution	fft.c	/^void Convolution(Complex * A, Complex * B, long NFFT, Complex * C) {$/;"	f
+ECompute	e2718.c	/^BigInt ECompute(long NbDec) {$/;"	f
+FFT	fft.c	/^void FFT(Real * Coef, long Length, Complex * FFT, long NFFT) {$/;"	f
+FFTLengthMax	fft.c	/^long FFTLengthMax;$/;"	v
+FFTSquareWorstError	fft.c	/^double FFTSquareWorstError;$/;"	v
+FFT_h	fft.h	2;"	d
+FreeBigInt	bigint.c	/^void FreeBigInt(BigInt * A) {$/;"	f
+I	fft.c	/^  Real R,I;$/;"	m	struct:ComplexTag	file:
+InitializeBigInt	bigint.c	/^void InitializeBigInt(BigInt * A, long MaxSize) {$/;"	f
+InitializeFFT	fft.c	/^void InitializeFFT(long MaxLength) {$/;"	f
+Inverse	bigint.c	/^void Inverse(BigInt * A, BigInt * B, BigInt * tmpBigInt) {$/;"	f
+InverseFFT	fft.c	/^void InverseFFT(Complex * FFT, long NFFT, Real * Coef, long Length) {$/;"	f
+MulBigInt	bigint.c	/^void MulBigInt(BigInt * A, BigInt * B, BigInt * C) {$/;"	f
+MulWithFFT	fft.c	/^void MulWithFFT(Real * ACoef, long ASize,$/;"	f
+NBDEC_BASE	bigint.h	16;"	d
+OmegaFFT	fft.c	/^Complex * OmegaFFT;$/;"	v
+PI	fft.c	30;"	d	file:
+PrintBigInt	bigint.c	/^void PrintBigInt(BigInt * A) {$/;"	f
+R	fft.c	/^  Real R,I;$/;"	m	struct:ComplexTag	file:
+Real	fft.h	/^typedef double Real;$/;"	t
+RecursiveFFT	fft.c	/^void RecursiveFFT(Complex * Coef, Complex * FFT, long Length, long Step, $/;"	f
+Size	bigint.h	/^  long Size, SizeMax;$/;"	m	struct:BigIntTag
+SizeMax	bigint.h	/^  long Size, SizeMax;$/;"	m	struct:BigIntTag
+UpdateBigInt	bigint.c	/^void UpdateBigInt(BigInt * A) {$/;"	f
+invBASE	bigint.h	15;"	d
+main	e2718.c	/^int main(int argc, char * argv[]) {$/;"	f
+tmpBigInt	e2718.c	/^BigInt tmpBigInt; \/* Temporary BigInt used in the binary splitting *\/$/;"	v

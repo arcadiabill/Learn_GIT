@@ -1,0 +1,35 @@
+// View this maxflow graph in Graphviz
+digraph G {
+  layout=dot;
+  splines=true;
+  0 [color=pink label = "0 (source) maxflow=8"];
+  11 [color=pink label = "11 (sink)"];
+  1 [label = "1" color=blue ];
+  2 [label = "2" color=blue ];
+  3 [label = "3" color=red /*mincut*/ ];
+  4 [label = "4" color=blue ];
+  5 [label = "5" color=red /*mincut*/ ];
+  6 [label = "6" color=blue ];
+  7 [label = "7" color=red /*mincut*/ ];
+  8 [label = "8" color=red /*mincut*/ ];
+  9 [label = "9" color=red /*mincut*/ ];
+  10 [label = "10" color=red /*mincut*/ ];
+  0 -> 1 [label = "2/5" color=black /*spare*/ ];
+  0 -> 2 [label = "2/5" color=black /*spare*/ ];
+  0 -> 3 [label = "4/4" color=green /*full*/ ];
+  0 -> 4 [label = "0/8" color=black /*spare*/ ];
+  0 -> 5 [label = "0/0" color=green /*full*/ ];
+  1 -> 6 [label = "2/2" color=green /*full*/ ];
+  2 -> 6 [label = "0/3" color=black /*spare*/ ];
+  2 -> 7 [label = "2/2" color=green /*full*/ ];
+  3 -> 7 [label = "4/5" color=black /*spare*/ ];
+  3 -> 8 [label = "0/3" color=black /*spare*/ ];
+  4 -> 8 [label = "0/0" color=green /*full*/ ];
+  4 -> 9 [label = "0/0" color=green /*full*/ ];
+  5 -> 9 [label = "0/9" color=black /*spare*/ ];
+  6 -> 11 [label = "2/2" color=green /*full*/ ];
+  7 -> 11 [label = "6/9" color=black /*spare*/ ];
+  8 -> 11 [label = "0/0" color=green /*full*/ ];
+  9 -> 11 [label = "0/4" color=black /*spare*/ ];
+  10 -> 11 [label = "0/4" color=black /*spare*/ ];
+}

@@ -1,0 +1,37 @@
+# Instruction Response File Setup
+#
+# This response file is for Siemens NX 11.0
+# If defaults are used it should work without mods
+# However, it's for 64-bit system.
+# 
+# 1st line after comment lines is the source dir
+# 2nd line is Siemens program directory
+# The rest of the file are the locations
+# of the update files off of .\NX 11.0
+.\NX 11.0\
+c:\Program Files\Siemens\NX 11.0\
+CATIAV5\pscatiav5\jt_catiav5.exe
+MECH\lms_motion\libcdt_interface.dll
+MECH\lms_motion\LMSLicenseDLL_UPS.dll
+MECH\lms_motion\NTireDLL.dll
+NXBIN\libjam.dll
+NXBIN\libjc.dll
+NXCAE_EXTRAS\afm\nxsec.dll
+NXCAE_EXTRAS\laminate\bin\nxsec.dll
+NXCAE_EXTRAS\tmg\nxsec.dll
+NXCAE_EXTRAS\tosca\bin\exe\libjam.dll
+NXHUMAN\jack_toolkit\lib\libjc.dll
+NXNASTRAN\nxn11\em64tnt\adina\libnxn.dll
+NXNASTRAN\nxn11\em64tnt\analysis.dmp.intel.exe
+NXNASTRAN\nxn11\em64tnt\analysis.exe
+NXNASTRAN\nxn11\em64tntL\adina\libnxn.dll
+NXNASTRAN\nxn11\em64tntL\analysis.dmp.intel.exe
+NXNASTRAN\nxn11\em64tntL\analysis.exe
+NXNASTRAN\nxn11\em64tntL\libups_cl.dll
+NXPLOT\bin\npsdicgm.dll
+NXPLOT\bin\pdf\libjam.dll
+NXPLOT\libjam.dll
+SIMULATION\acoustics\sysnoise\bin\Windows_x86_64\LMSLicenseDLL_UPS.dll
+SIMULATION\flexiblepipe\application\LMSLicenseDLL_UPS.dll
+SIMULATION\samcef\Exec\LMSLicenseDLL_UPS.dll
+UGPHOTO\Iray+\nt-x86-64\lib\libneuray.dll

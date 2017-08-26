@@ -1,0 +1,242 @@
+<a href="articles.html">&bull; Articles</a>
+<a href="computing_articles.html">&bull; Articles about computing</a>
+
+<p>
+
+
+<h1>gettags -- a simple utility for reading tags from MP3, Ogg, and FLAC files</h1>
+
+gettags is a simple, completely self-contained command-line utility for 
+reading metadata tags from
+audio files. At present, MP3 (ID3v2), Ogg and FLAC files 
+(with Vorbis-style comments) are supported. I might add other file types
+if I ever accumulate enough file in those formats to make it 
+worth the effort.
+<p/>
+The main purpose of gettags is to make it straightforward to write
+shell or perl scripts that move music files around according to their
+tags. Although there are plenty of command-line utilities that will 
+read the contents of
+tags, they typically work only with one type of file. gettags only extracts
+a relatively small set of tags, but it does it in the same way across all
+file types it supports. 
+<p/>
+gettags is written entirely in ANSI C, with no dependencies on any other 
+libraries. It is open source -- see the 
+Download section below -- and can be
+compiled for Linux, or for Windows using either Cygwin or MinGW. 
+On Windows, the choice of Cygwin or MinGW comes down to whether you want
+to run the utility from the Windows command prompt or batch files (MingGW), or
+from within a Cygwin session. The MinGW build is a native Windows executable
+and does not require Cygwin. However, Unicode support is more predictable
+in Cygwin (see below).
+
+<h3>Basic usage</h3>
+
+To display all (text) tags in a file:
+
+<pre>
+% gettags {filename}
+</pre>
+</p>
+
+To display just the title tag, if it is present:
+
+<pre>
+% gettags -c title {filename}
+</pre>
+</p>
+
+
+To display the specific TALB tag in an MP3 file, if it is present:
+
+<pre>
+% gettags -e TALB {filename}
+</pre>
+
+
+<h3>Script mode</h3>
+
+In 'script' mode, which is enabled with the <code>-s</code> switch, all
+output from gettags is prefixed with either 'OK' or 'ERROR'. This is intended
+to make it easier for scripts to distinguish valid responses from error
+responses. However, because all valid output is to <code>stdout</code>, and
+error messages are to <code>stderr</code>, it might be easier just to
+take the absence of any response on <code>stdout</code> as an indication
+of an error. For examle, in perl:
+
+
+<pre style="background-color: #FFFFD0; padding: 5px">
+my $album = `gettags -c album "$file"`;
+chomp ($album);
+if ($album)
+  {
+  # There is an album tag, so continue...
+  }
+else
+  {
+  die "No album tag in $file\n".
+  }
+
+</pre>
+
+
+<h3>Common names</h3>
+
+The difference between <code>-e</code> and <code>-c</code> is significant.
+<code>-e</code> specifies an exact name. The tag will only be displayed if
+its exact match is found (case sensitive). However, there is no uniformity
+at all between the tag naming conventions in the different file types.
+In fact, there's little uniformity between tagging applications even within
+the same file type, but there's not much that I can do about that.
+<p/>
+To make it possible to work on mixed file types with the same script, 
+gettags provides 'common' names for the various tags, which map onto
+different specific tags for different file types. For example, the
+common tag 'album' will extract a tag call 'album', 'talb', or 'tal',
+regardless of case. 'TAL' and 'TALB' are the names used within the 
+various releases of the ID3v2 specification; 'Album', or 'ALBUM' are
+usually used with Ogg and FLAC files.
+<p/>
+The common name <code>-c artist</code> will match (regardless of case)
+'TP1', 'TPE1', 'artist', or 'performer'. The latter is necessary because
+there is some disagreement about how to name the primary artist in 
+FLAC tags.
+<p/>
+To get a list of supported common names, run:
+
+<pre>
+% gettags -c help
+</pre>
+
+
+<h3>Unicode issues</h3>
+
+ID3v2 allows for a variety of different Unicode formats, even within the
+same file. Ogg and FLAC use 8-bit characters, which in practice usually
+means UTF-8.  
+<p/>
+To unify functionality across file types, 
+all output from gettags is encoded as UTF-8, regardless of the original 
+encoding. 
+This is nearly always the best way to represent text data in modern 
+computer systems -- UTF-8 is widely supported, and is automatically 
+detected by the majority of applications that handle text. Most importantly
+from a programming/scripting perspective, UTF-8 will never contain
+embedded zero bytes, so UTF-8 strings can often be handled just like
+ASCII.
+<p/>
+The fly in the ointment is Microsoft Windows file naming, which is complex
+and poorly document. In general, passing a series of UTF-8 bytes to a  
+Windows API function that creates a file will not give you a readable filename,
+unless all the character values are in fact ASCII. This affects
+MinGW as well, since it doesn't have the compatibility layer that
+Cygwin has. Moreover, the Windows command prompt ('DOS box') is not
+UTF-8 compatible -- the output from gettags will not be readable when the
+file contains Unicode tags. 
+<p/>
+Under Cygwin, and using the Cygwin terminal, these problems are not
+apparent. If I pipe the output of gettags into a perl script, and
+that script uses the output of gettags to form a filename, then conversion
+to Windows naming convention happens automatically. 
+ 
+
+<h3>Limitations</h3>
+
+1. gettags can't do anything about incorrectly formatted tags. For example,
+if the encoder says that a tag is in UTF-8 format, but actually puts
+UTF-16 into the tag, that's too bad. This happens surprisingly often.<br/>
+2. It's possible for badly-formatted tags to crash gettags. If you 
+come across one of these, please send it to me so I can improve the 
+program.<br/>
+3. gettags only handles text tags, and ID3v2 comments (which are a variety
+of text tag). It won't extract pictures or anything clever like that.<br/>
+4. If there are multiple tags with the same name, all will be extracted.
+This could be a problem for scripts that are expecting a single line
+response.<br/>
+5. gettags does not support ID3v1 tags, because I don't think anybody still
+uses them.
+ 
+
+
+<h3>Example usage in a script</h3>
+
+This example shows a simple perl script that renames a bunch of music files
+according to the tags they contain. In practice, the process might be
+more complicated than this, because a real script would have to deal with
+issues such as illegal characters in filenames, or duplicate titles.
+
+<pre style="background-color: #FFFFD0; padding: 5px">
+#!/usr/bin/perl -w
+
+# A script that uses gettags to copy a bunch of music files to a new directory
+# whose name is given by ${target_dir}/${album}/${title}/${extension}
+# Where $target_dir is the first argument to the script, $title and
+# $album are taken from the music file, and $extension is the original file
+# extension
+#
+# Example:
+#
+# move_album.pl /media/my_albums /tmp/my_cd_rips/*.mp3
+
+use strict;
+
+die "Usage: move_album.pl {directory} {files...}" if (scalar(@ARGV) < 1);
+
+my $target_dir = $ARGV[0];
+print "target=", $target_dir, "\n";
+
+system ("mkdir -p \"$target_dir\"");
+
+for (my $i = 1; $i < scalar(@ARGV); $i++)
+  {
+  my $file = $ARGV[$i];
+  my $album = `gettags -c album "$file"`;
+  chomp ($album);
+  if ($album)
+    {
+    my $title = `gettags -c title "$file"`;
+    chomp ($title);
+    if ($title)
+      {
+      my $ext = ($file =~ m/([^.]+)$/)[0];
+      my $album_dir = "${target_dir}/${album}";
+      my $target_file = "${album_dir}/${title}.${ext}";
+      system ("mkdir -p \"${album_dir}\"");
+      print "Copying file ", $file, "\n to ", $target_file, "\n";
+      my $cmd = "cp \"$file\" \"$target_file\""; 
+      system ($cmd);
+      }
+    }
+  else
+    {
+    print "No album tag in '", $file, "\n";
+    }
+  }
+</pre>
+
+<h3>Bugs</h3>
+
+If you find an MP3, FLAC, or Ogg file that gettags does not handle
+correct, please let me know.
+
+
+<h3>Legal stuff</h3>
+
+gettags is (c)2012 Kevin Boone, and distributed according to the
+GNU Public Licence, version 2. Essentially that means that you can
+do whatever you like with the code, at your own risk, provided that
+the original author continues to be identified.
+
+
+<h3>Downloads</h3>
+
+<ul>
+<li><a href="gettags.tar.gz">Source code</a></li>
+<li><a href="gettags_mingw.exe">Native windows binary</a></li>
+<li><a href="gettags_cygwin.exe">Cygwin windows binary</a></li>
+</ul>
+
+
+
+

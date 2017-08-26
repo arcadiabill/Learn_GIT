@@ -1,0 +1,8 @@
+ Volume in drive I is 3TB
+ Volume Serial Number is 56B2-AACD
+
+ Directory of I:\src\Python
+
+11/28/2013  10:56 AM        22,226,779 11 - My World.flac
+               1 File(s)     22,226,779 bytes
+               0 Dir(s)  394,151,182,336 bytes free

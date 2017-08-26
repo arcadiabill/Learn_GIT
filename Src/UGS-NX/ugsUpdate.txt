@@ -1,0 +1,26 @@
+# Instruction Response File Setup
+#
+# This response file is for Siemens NX 10.0
+# If defaults are used it should work without mods
+# However, it's for 64-bit system.
+# 
+# 1st line after comment lines is the source dir
+# 2nd line is Siemens program directory
+# The rest of the file are the locations
+# of the update files off of .\NX 10.0
+.\NX 10.0\
+c:\Program Files\Siemens\NX 10.0\
+CATIAV5\pscatiav5\jt_catiav5.exe
+DRAFTING\layout\ideasgateway\ideas\nxlic.dll
+NXCAE_EXTRAS\laminate\bin\nxsec.dll
+NXCAE_EXTRAS\tmg\nxsec.dll
+NXCAE_EXTRAS\tosca\bin\exe\libjam.dll
+NXHUMAN\jack_toolkit\lib\ugs_common.dll
+NXNASTRAN\nxn10\em64tnt\adina\libnxn.dll
+NXNASTRAN\nxn10\em64tnt\analysis.exe
+NXNASTRAN\nxn10\em64tntl\adina\libnxn.dll
+NXNASTRAN\nxn10\em64tntl\analysis.exe
+NXPLOT\bin\npsdicgm.dll
+NXPLOT\bin\pdf\libjam.dll
+NXPLOT\libjam.dll
+UGII\libjam.dll

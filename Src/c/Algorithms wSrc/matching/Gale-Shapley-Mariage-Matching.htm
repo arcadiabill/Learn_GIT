@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+	
+		<title>
+			Gale-Shapley Algorithm Demonstration
+		</title>
+		<script src="Gale-Shapley-Mariage-Matching_files/gale-shapley.js"></script>
+		<link rel="stylesheet" href="Gale-Shapley-Mariage-Matching_files/gale-shapley.css">
+	</head><body linkifytime="2" linkified="0" linkifying="false">
+		<noscript>
+			<div>
+				JavaScript is required.
+			</div>
+		</noscript>
+		<div id="header">
+			<h1>Gale-Shapley Algorithm Demonstration</h1>
+			<p>Gale-Shapley provides a solution to the <a href="http://en.wikipedia.org/wiki/Stable_marriage_problem">stable marriage problem</a>.
+ It can be used to pair items from two sets. In the stable marriage 
+problem, boys are to be matched with girls, but obviously Gale-Shapley 
+can be (and is) used in many different scenarios.</p>
+		</div>
+		<div id="instructions">
+			<h2>Instructions</h2>
+			<p>Once the problem is setup, by clicking the <q>Setup</q> button, there will be a number of rows created.</p>
+			<ol>
+				<li>Type in a new name (or leave the default) for each row.</li>
+				<li>Select preferences for each item, highest first to lowest last.</li>
+			</ol>
+			<p>Thanks to Bart van Houte for finding a rather major bug in the original version of this.</p>
+		</div>
+		<div id="setup_controls">
+			<h2>Setup</h2>
+			<div>
+				<label for="n">I would like to match</label>
+				<select id="n">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option selected="selected" value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+				<label for="type_a">pairs of:</label>
+				<input id="type_a" value="boys">
+				<label for="type_b">and</label>
+				<input id="type_b" value="girls">.
+			</div>
+			<button id="setup">Setup</button>
+  		</div>
+  		<script type="text/javascript" src="Gale-Shapley-Mariage-Matching_files/google-analytics.js"></script>
+	</body></html>

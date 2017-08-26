@@ -1,0 +1,1128 @@
+Total Number  albums: 4054
+Number Hi-Res albums: 3144
+Number Lo-Res albums:  910
+
+-No-  Hi  Lo  Artist's Name
+1051 141  55  Various Artists
+ 985  10  28  Soundtracks Various Artists
+ 403   5  20  Genesis
+ 597   1  17  LeVert, Gerald
+ 861  31  16  Rolling Stones
+ 268   0  15  Dag Nasty
+1104  33  13  Xmas Various artists
+1087  17  13  Who, the
+ 992   7  12  Taylor, James
+ 988   3  10  Talking Heads
+ 820  28  10  Queen
+ 324   4  10  Duran Duran
+ 209   7  10  Collins, Phil
+ 793   3   9  Phish
+ 728   0   9  NeverShoutNever!
+ 643   6   9  Marley, Bob
+  98  12   9  Ben Folds Five
+ 693   1   8  Mint Condition
+  92  25   8  Beatles, the
+ 971   2   7  Sublime
+ 817   2   7  Public Enemy
+ 725   0   7  Nelly
+ 412   0   7  Ginuwine
+ 397   5   7  Gabriel, Peter
+ 244   0   7  Cyrus, Miley
+1099   8   6  Wonder, Stevie
+1039  20   6  U2
+ 868  10   6  Rush
+ 625   0   6  Ludacris
+ 522   0   6  Joe
+ 344   0   6  Evanescence
+ 802   0   5  Poi Dog Pondering
+ 754   0   5  Offspring
+ 708   9   5  Morrison, Van
+ 449   1   5  Hamilton, Anthony
+ 430   2   5  Green Day
+ 375   1   5  Ford, Colt
+ 326   5   5  Eagles
+ 230  10   5  Creedence Clearwater Revival
+  93   9   5  Beck
+  70   3   5  Babyface
+1052   4   4  Vaughan, Stevie Ray & Double Trouble
+1049   9   4  Van Halen
+1038   0   4  Tyrese
+1014   5   4  Tomita, Isao
+1000   0   4  They Might Be Giants
+ 942   9   4  Springsteen, Bruce
+ 823  18   4  R.E.M.
+ 801   0   4  Pogues, the
+ 741  10   4  Nine Inch Nails
+ 654   0   4  Maxwell
+ 644   1   4  Marley, Ziggy
+ 540   7   4  Journey
+ 530   0   4  Jon B
+ 509   1   4  Jay-Z
+ 506   2   4  Jamiroquai
+ 503   1   4  Jaheim
+ 426  19   4  Grateful Dead
+   5   2   4  2Pac
+1101   0   3  Wu-Tang Clan
+1021   0   3  Tragically Hip
+ 984   2   3  System of a down
+ 969   5   3  Styx
+ 965   1   3  Stone Temple Pilots
+ 926   6   3  Smashing pumpkins
+ 906   0   3  Sick Puppies
+ 880  14   3  Satriani, Joe
+ 742   4   3  Nirvana
+ 721   2   3  Nakai, R Carlos
+ 710   0   3  Motley Crue
+ 703   9   3  Moody Blues
+ 680   8   3  Metallica
+ 632   2   3  Madonna
+ 602   0   3  Lil Wayne
+ 264   2   3  Lewis Black
+ 577   4   3  Kravitz, Lenny
+ 558   0   3  Killswitch Engage
+ 550   0   3  Kelly, R
+ 535   0   3  Jones, Quincy
+ 518   5   3  Jethro Tull
+ 443   0   3  Gyptian
+ 421   3   3  Goo goo dolls
+ 337   4   3  Enigma
+ 335   2   3  Eminem
+ 277  23   3  Dave Matthews Band
+ 131   0   3  Body + Soul
+ 129   0   3  Bobby V
+  82   1   3  Barenaked Ladies
+1107   1   2  Yanni
+1095   1   2  Winston, George
+1022   1   2  Train
+1016   0   2  Toots and the Maytals
+1003   0   2  Thomas, Carl
+1002   2   2  Third eye blind
+1001   1   2  Thin Lizzy
+ 998   5   2  Tesla
+ 973   2   2  Sugar Ray
+ 968   0   2  Strokes, the
+ 917   1   2  Sister Sledge
+ 910   9   2  Simon, Paul
+ 856   3   2  Robertson. Robbie
+ 853   4   2  Rihanna
+ 851   1   2  Richie, Lionel & The Commodores
+ 828   3   2  Rage Against The Machine
+ 818   2   2  Puddle of Mudd
+ 814   7   2  Prince
+ 805   5   2  Police
+ 751   4   2  Oasis
+ 738   7   2  Nickelback
+ 691   0   2  Ministry
+ 690   0   2  Minaj, Nicki
+ 674  15   2  Mellencamp, John Cougar
+ 653   0   2  Mathematics
+ 624   0   2  LSG
+ 614   1   2  Los Lobos
+ 603   2   2  Limp Bizkit
+ 594   1   2  Lennon, John
+ 581   1   2  Lacs
+ 576   8   2  Krauss, Alison
+ 573   2   2  Korn
+ 572   1   2  Knopfler, Mark
+ 561   1   2  King, B B
+ 528   1   2  Johnson, John
+ 525  11   2  John, Elton
+ 523   8   2  Joel, Billy
+ 507   1   2  Jane's Addiction
+ 487   0   2  Idol, Billy
+ 480   0   2  Hothouse Flowers
+ 478   0   2  Hornsby, Bruce & The Range
+ 474   0   2  Holy Ghost
+ 460   0   2  Heart
+ 439   0   2  Guru
+ 381   0   2  FourPlay
+ 377   8   2  Foreigner
+ 361   0   2  Five for Fighting
+ 348   0   2  Everlast
+ 297   0   2  Deuter
+ 233   9   2  Crosby, Stills & Nash
+ 226   3   2  Cranberries, the
+ 207   3   2  Coldplay
+ 176  10   2  Cash, Johnny
+ 161   1   2  Bush
+ 159   1   2  Bullet For My Valentine
+ 141   5   2  Braxton, Toni
+ 136   0   2  Bone Thugs-N-Harmony
+ 134   4   2  Bon Jovi
+ 130   0   2  BoDeans
+ 120   2   2  Blind Melon
+ 114  13   2  Black Sabbath
+  91   5   2  Beastie Boys
+  65   0   2  Avant
+1123   0   1  ZZZ Unsorted
+1103   3   1  XTC
+1093   1   1  Wilson, Gretchen
+1090   3   1  Wilco
+1089   1   1  Widespread Panic
+1086   5   1  Whitesnake
+1084   2   1  White, Barry
+1083   0   1  White Zombie
+1080   0   1  Wells, Junior
+1063   1   1  Violent Femmes
+1060   1   1  Village People, the
+1056   1   1  Vertical Horizon
+ 262   2   1  Various
+1044   6   1  Usher
+1041   0   1  Urban Dance Squad
+1034   0   1  Twista
+1028   0   1  Trower, Robin
+1027   1   1  Triumph
+1020   5   1  Traffic
+1019   0   1  Townsend, Pete
+1015   5   1  Tool
+1010   1   1  Three Dog Night
+ 999   5   1  Tharpe, Sister Rosetta
+ 997   0   1  Tender Love
+ 993   0   1  Taylor, Paul
+ 987   0   1  T.I
+ 982   0   1  Swingfield Big Band, The
+ 970   0   1  Subdudes, the
+ 967   0   1  Streetlight Manifesto
+ 960   5   1  Stewart, Rod
+ 932   0   1  Soup Dragons, the
+ 931   3   1  Soundgarden
+ 921   1   1  Slayer
+ 916   3   1  Sister Hazel
+ 907   2   1  Silverchair
+ 898   0   1  Shatner, William
+ 892   1   1  Semisonic
+ 879   1   1  Santos, Romeo
+ 875   0   1  Samples, the
+ 865   0   1  Roxy Music
+ 855   2   1  Rise Against
+ 850   0   1  Rich, Buddy
+ 845   0   1  Reese, Don
+ 835   0   1  Randolph, Robert
+ 826  13   1  Radiohead
+ 816   0   1  Prodigy
+ 815   0   1  Probot
+ 813   2   1  Primus
+ 812   0   1  Pretty Ricky
+ 809  13   1  Presley, Elvis
+ 806   1   1  Porno For Pyros
+ 803   1   1  Pointer Sisters, the
+ 792   0   1  Phillips, John
+ 786   0   1  Pet Shop Boys
+ 783   0   1  Penguins, the
+ 782  10   1  Pearl Jam
+ 781   0   1  Paul, Sean
+ 775   0   1  Parker, Graham
+ 773   4   1  Pantera
+ 767   0   1  Owl City
+ 756   0   1  Old 97's
+ 755   0   1  Ol' Dirty Bastard
+ 750   0   1  O'Connor, Sinead
+ 746   0   1  Notorious B I G
+ 744   1   1  No Doubt
+ 740   1   1  Night Ranger
+ 739   0   1  Nieves, Tito
+ 733   0   1  New Radicals
+ 729   0   1  Neville Brothers, the
+ 726   5   1  Nelson, Willie
+ 720   2   1  N.W.A
+ 719   0   1  Myles, Alannah
+ 255   9   1  Mozart
+ 706   0   1  Morphine
+ 705   3   1  Morissette, Alanis
+ 704   0   1  Moore, Gary
+ 700   0   1  Money, Eddie
+ 692   1   1  Minor Threat
+ 688   0   1  Miller, Mac
+ 679   0   1  Mercy Me
+ 676   1   1  Men at work
+ 673   0   1  Mejia, Lewis
+ 666   1   1  McLachlan, Sarah
+ 665   0   1  McKenzie, Bob & Doug
+ 658   2   1  Mazzy Star
+ 657   2   1  Mayfield, Curtis
+ 656   1   1  Mayer, John
+ 652   2   1  Matchbox 20
+ 641   0   1  Maranatha Group
+ 637   1   1  Malmsteen, Yngwie
+ 621   0   1  Loverboy
+ 618   0   1  Love and Rockets
+ 609   2   1  Live
+ 606   0   1  Litte Feat
+ 604   1   1  Linkin Park
+ 600   1   1  Lifehouse
+ 568   0   1  Kinsey Report, The
+ 566   0   1  Kingston, Sean
+ 556   0   1  Kilar, Wojciech
+ 554   3   1  Kid Rock
+ 553   0   1  Kid Bop Kids
+ 551   2   1  Kesha
+ 544   0   1  Julianna Hatfield 3
+ 533   0   1  Jones, Jesus
+ 531   0   1  Jon Spencer Blues Explosion
+ 527   0   1  Johnson, Eric
+ 521   0   1  Jewel
+ 513   0   1  Jennings, Lyfe
+ 508   0   1  Jason Bonham Band
+ 502  21   1  Jackson, Michael
+ 497   0   1  Isaacs, Gregory
+ 494   0   1  IQ Dark Matter
+ 493   2   1  INXS
+ 492   0   1  Insane Clown Posse
+ 491   0   1  Indigo Girls
+ 489   0   1  Imbruglia, Natalie
+ 488   0   1  Iglesias, Enrique
+ 485   1   1  Ice-T
+ 476   4   1  Hooker, John Lee
+ 475   0   1  Homunculus
+ 471   2   1  Holiday, Billie
+ 467   0   1  Highway Band, the
+ 457   0   1  Headley, Heather
+ 451   6   1  Harper, Ben
+ 450   0   1  Hancock, Herbie
+ 446   0   1  Haley, Bill & the Comets
+ 442   4   1  Guy, Buddy
+ 427   1   1  Gray, David
+ 414   0   1  Global Journey
+ 409   0   1  Gillespie, Dizzy
+ 396   0   1  Gabbards, The
+ 395   0   1  G3
+ 394   0   1  G-Unit
+ 393   0   1  Future
+ 389   0   1  Fugazi
+ 388   0   1  Frey, Glenn
+ 385   1   1  Franz Ferdinand
+ 378   0   1  Fountains of Wayne
+ 374   3   1  Foo Fighters
+ 360   1   1  Fiona Apple
+ 355   0   1  Fergie
+ 352   2   1  Fastball
+ 351   0   1  Fall, the
+ 347   1   1  Everclear
+ 342   0   1  Etheridge, Melissa
+ 336   0   1  Encore
+ 318   1   1  Drake
+ 316   1   1  Dr Dre
+ 315  18   1  Doors, the
+ 314   2   1  Doobie Brothers, The
+ 310   0   1  DMX
+ 306   0   1  Disney
+ 305   6   1  Dire Straits
+ 291   0   1  Del Amitri
+ 289   3   1  Def Leppard
+ 279   0   1  Day the
+ 274   0   1  Danzig
+ 272   0   1  Damn Yankees
+ 271   0   1  Damageplan
+ 266   0   1  D12
+ 265   0   1  D.O.C, The
+ 243   0   1  Cypress Hill
+ 240   0   1  Culture Club
+ 238   0   1  Crystal Method, the
+ 236   0   1  Crow, The
+ 229   3   1  Creed
+ 224   0   1  Cracker
+ 221   5   1  Counting Crows
+ 220   3   1  Costello, Elvis
+ 218   1   1  Corrs, the
+ 216   0   1  Cooper, Alice
+ 214   0   1  Connick, Harry Jr
+ 213   0   1  Concrete  Blonde
+ 212   0   1  Como, Perry
+ 200   2   1  Cliff, Jimmy
+ 195  13   1  Clapton, Eric
+ 188   0   1  Chevelle
+ 185   2   1  Cher
+ 184   4   1  Cheap Trick
+ 183   0   1  Charlie Johnson Quartet
+ 179   0   1  Chamillionaire
+ 168   1   1  Captain & Tennille, The
+ 167   0   1  Candlebox
+ 165   1   1  Cake
+ 157   0   1  Buffalo, Tom
+ 155   0   1  BuckShot LeFunque
+ 148   2   1  Brown, James
+ 147   0   1  Brooks, Ronnie Baker
+ 142   3   1  Breaking Benjamin
+ 140  10   1  Bowie, David
+ 139   6   1  Boston
+ 138   0   1  Books, The
+ 118   1   1  Blige, Mary J
+ 115   2   1  Black Stone Cherry
+ 110   3   1  Bjork
+ 108   0   1  Big Head Todd and the Monsters
+ 107   0   1  Big Bopper, The
+ 101   1   1  Berlin, Irving
+ 246  27   1  Beethoven
+  90   8   1  Beach Boys
+  63   2   1  Audio Books
+  62   0   1  Atreyu
+  59   0   1  AT&T
+  56   0   1  Arrested Development
+  51   0   1  Arci, Bob
+  50   1   1  Archies
+  48   0   1  Apache Indian
+  37   5   1  Allman Brothers Band
+  35   1   1  Alien Ant Farm
+  26   0   1  African Vibrations
+  20   0   1  Adam F
+  17   0   1  Above The Law
+  11   0   1  A Paul Ortega
+   9   1   1  50-Cent
+   4   0   1  2 Chainz
+   2   2   1  10cc
+1122   9   0  ZZ Top
+1121   1   0  Zwan
+1120   1   0  Zombies, the
+1119   6   0  Zombie, Rob
+1118   7   0  Zevon, Warren
+1117  10   0  Zappa, Frank
+1116   2   0  Zappa, Dweezil
+1115   2   0  Zac Brown Band
+1114   2   0  Youngblood, Mary
+1113   9   0  Young, Neil
+1112   2   0  Yo La Tengo
+1111   1   0  Ying Yang Twins
+1110  13   0  Yes
+1109   1   0  Yaz
+1108   3   0  Yardbirds, the
+1106   1   0  Yankovic, Weird Al
+1105   1   0  Yamin, Elliott
+1102   1   0  Wyatt, Robert
+1100   1   0  Wright, Gary
+1098   3   0  Wishbone Ash
+1097   1   0  Winter, Paul
+1096   2   0  Winter, Johnny
+1094   1   0  Wilson, Jackie
+1092   1   0  Wilson, Cassandra
+1091   2   0  Williams, Hank
+1088   1   0  Wicks, Chuck
+1085   1   0  White, Jack
+1082   3   0  White Stripes, The
+1081   3   0  West, Kanye
+1079   7   0  Weezer
+1078   4   0  Webber, Andrew Lloyd
+1077   4   0  Weavers, the
+1076   5   0  Weather Report
+1075   3   0  Waters, Roger
+1074   1   0  Waters, Muddy
+1073   3   0  WASP
+1072   1   0  Washburn, Abigail
+1071   3   0  Warwick, Dionne
+1070   1   0  Warrant
+1069   2   0  War
+1068   4   0  Walsh, Joe
+1067   1   0  Wallflowers, the
+1066   1   0  Walela
+1065   2   0  Waits, Tom
+1064   4   0  Wainwright, Rufus
+1062   2   0  Vinton, Bobby
+1061   2   0  Vincent, Rhonda
+1059   2   0  Vile, Kurt
+1058   1   0  Very Best, The
+1057   1   0  Veruca Salt
+1055   3   0  Velvet Underground, the
+1054   1   0  Velvet Revolver
+1053   2   0  Vega, Suzanne
+1050   2   0  Van Zant
+1048   2   0  Vampire Weekend
+1047   4   0  Valli, Frankie & the 4 Seasons
+1046   1   0  Valens, Ritchie
+1045   1   0  Vai, Steve
+ 261   1   0  US Air Force Band
+1043   1   0  Uriah Heep
+1042   1   0  Urban, Keith
+1040   1   0  Uncle Tupelo
+1037   1   0  Type O Negative
+1036   1   0  Tyminski, Dan
+1035   1   0  Twisted Sister
+1033   1   0  Twenty One Pilots
+1032   1   0  Turtles, the
+1031   3   0  Turner, Tina
+1030   1   0  Turner, Big Joe
+1029   1   0  Tunstall, KT
+1026   1   0  Travis
+1025   2   0  Traveling Wilburys, The
+1024   3   0  Trans-Siberian Orchestra
+1023   2   0  Trainor, Meghan
+1018   2   0  Tower of Power
+1017   1   0  Tosh, Peter
+1013   1   0  TLC
+1012   2   0  Tisdale, Ashley
+1011   1   0  Thundercat
+1009   2   0  Three Days Grace
+1008   1   0  Thorogood, George  & The Destroyers
+1007   1   0  Thompson, Richard & Linda
+1006   6   0  Thompson, Richard
+1005   1   0  Thompson Twins
+1004   1   0  Thompson Square
+ 996   8   0  Temptations, The
+ 995   1   0  Temple Of The Dog
+ 994   2   0  Tears For Fears
+ 260   2   0  Tchaikovsky
+ 991   1   0  Tankian, Serj
+ 990   1   0  Tank Girl
+ 989   2   0  Tamia
+ 986   1   0  T. Rex
+ 983   4   0  Switchfoot
+ 981   1   0  Swift, Taylor
+ 980   1   0  Sweet, Matthew
+ 979   1   0  Sweet Honey in the Rock
+ 978   2   0  Supertramp
+ 977   1   0  Superchick
+ 976   3   0  Sun Records
+ 975   2   0  Sun Ra
+ 974   2   0  Summer, Donna
+ 972   1   0  Sublime with Rome
+ 966   4   0  Stooges, The
+ 964   1   0  Stone Roses, The 
+ 963   2   0  Stirling, Lindsey
+ 962   4   0  Sting
+ 961   4   0  Stiff Records
+ 959   1   0  Stewart, Al
+ 958   4   0  Stevie Wonder
+ 957   3   0  Stevens, Cat
+ 956   6   0  Steve Miller Band, the
+ 955   1   0  Stereolab
+ 954   1   0  Steffenwolf
+ 953   2   0  Stefani, Gwen
+ 952   6   0  Steely Dan
+ 951   1   0  Steeldrivers, the
+ 950  30   0  Stax
+ 949   3   0  Staples, Mavis
+ 948   5   0  Stanley Brothers, the
+ 947   1   0  Standells, the
+ 946   1   0  Staind
+ 945   2   0  Stabbing Westward
+ 944   3   0  St Marie, Buffy
+ 943   1   0  Squeeze
+ 941   1   0  Springfield, Dusty
+ 940   1   0  Springfield, Buffalo
+ 939   3   0  Spoon
+ 938   1   0  Spin Doctors
+ 937   4   0  Spektor, Regina
+ 936   4   0  Spector, Phil
+ 935   3   0  Spears, Britney
+ 934   2   0  Spalding, Esperanza
+ 933   5   0  Sousa, John Philips
+ 930   1   0  Soul Coughing
+ 929   3   0  Snow Patrol
+ 928   1   0  Smiths, the
+ 927   5   0  Smith, Patti
+ 925   2   0  Smash Mouth
+ 924   9   0  Sly And The Family Stone
+ 923   1   0  Slipnot
+ 922   1   0  Sledge, Percy
+ 920   4   0  Slash
+ 919   2   0  Skrillex
+ 918   1   0  Skaggs, Ricky & Kentucky Thunder
+ 915   1   0  Siouxsie And The Banshees {whr}
+ 914   1   0  Simpson, Martin
+ 913   1   0  Simply Red
+ 912   2   0  Simple Minds
+ 911  11   0  Simone, Nina
+ 909   2   0  Simon, Carly
+ 908  11   0  Simon and Garfunkel
+ 905   1   0  Sia
+ 904   1   0  Shocked, Michelle
+ 903   3   0  Shins, the
+ 902   2   0  Shinedown
+ 901   1   0  Shenandoah
+ 900   1   0  Shelton, Blake
+ 899   2   0  Sheeran, Ed
+ 897   1   0  Shannon, Del
+ 896   1   0  Shania Twain
+ 895   4   0  Shakira
+ 894   1   0  Shabba Ranks
+ 893   1   0  Sex Pistols, the
+ 891   2   0  Segovia, Andres
+ 259   4   0  Segovia, Andres
+ 890   7   0  Seger, Bob & The Silver Bullet Band
+ 889   8   0  Seeger, Pete
+ 888   1   0  Seals & Croft
+ 887   2   0  Seal
+ 886   1   0  Scruggs, Earl
+ 885   5   0  Scorsese, Martin
+ 884   2   0  Scorpions
+ 258   6   0  Schubert, Franz
+ 883   7   0  Scaggs, Boz
+ 882   3   0  Saxon
+ 881   2   0  Savage Garden
+ 878   1   0  Santigold
+ 877  19   0  Santana, Carlos
+ 876   1   0  Sandoval, Hope & The Warm Inventions
+ 874   1   0  Sam & Dave
+ 873   1   0  Saga
+ 872   1   0  Sade
+ 871   1   0  Rusted Root
+ 870   1   0  Russell, David
+ 869   1   0  Rush, Otis
+ 867   1   0  Rundgren, Todd
+ 866   2   0  Royal Blood
+ 864   3   0  Ross, Diana
+ 863   8   0  Ronstadt. Linda
+ 862   1   0  Ronettes, The
+ 860   1   0  Rogers, Kenny
+ 859   1   0  RodriGuez, Sixto
+ 858   2   0  Rodrigo y Gabriela
+ 857   4   0  Robinson, Smokey & the Miracles
+ 257   2   0  Rimsky-Korsakov
+ 854   1   0  Rimes, LeAnn
+ 852   1   0  Righteous Brothers, the
+ 849   4   0  Replacements, the
+ 848   6   0  Reo Speedwagon
+ 847   2   0  Reinhardt, Django
+ 846   1   0  Reeves, Martha & The Vandellas
+ 844   6   0  Reed, Lou
+ 843   1   0  Redding, Otis & Thomas Carla
+ 842   3   0  Redding, Otis
+ 841   1   0  Red Jumpsuit Apparatus, The
+ 840   8   0  Red Hot Chili Peppers
+ 839   1   0  Ratt
+ 838   1   0  Raspberries, The
+ 837   1   0  Rascal Flatts
+ 836   1   0  Rare Earth
+ 834   1   0  Randolph, Boots
+ 833   6   0  Ramones
+ 832   1   0  Ram Jam
+ 831   2   0  Raitt, Bonnie
+ 830   1   0  Rainbow
+ 829   1   0  Rag’n’Bone Man
+ 827   1   0  Raekwon
+ 825   2   0  Raconteurs, The
+ 824   1   0  Rabbit, Eddie
+ 822   1   0  Quicksilver Messenger Service
+ 821  15   0  Queensryche
+ 819   1   0  PureNRG
+ 811   1   0  Pretty Girls Make Graves
+ 810   3   0  Pretenders, the
+ 808   1   0  Powter, Daniel
+ 807   2   0  Postal Service, the
+ 804   3   0  Poison
+ 800   1   0  Platters, the
+ 799   4   0  Plant, Robert
+ 798   1   0  Plain White Ts
+ 797   1   0  Pixies
+ 796  32   0  Pink Floyd
+ 795   1   0  Pink
+ 794   2   0  Pickett, Wilson
+ 791   1   0  Phillips, Ester
+ 790   2   0  Pge, Jimmy & the Black Crowes
+ 789   1   0  Peyroux, Madeleine
+ 788   7   0  Petty, Tom & the Heartbreakers
+ 787   7   0  Peter, Paul & Mary
+ 785   3   0  Perry, Katy
+ 784   1   0  Perkins, Carl
+ 780   1   0  Paul, Less
+ 779   2   0  Paul Revere & the Raiders
+ 778   2   0  Paul Butterfield Blues Band, The
+ 777   2   0  Paul Butterfield Blues Band
+ 776   1   0  Parsons, Alan
+ 774   1   0  Paramore
+ 772   2   0  Palmer, Robert
+ 771   1   0  Palmer, Amanda
+ 770   1   0  Page, Jimmy & Robert Plant
+ 769   1   0  Page, Jimmy
+ 256   4   0  Pachelbel
+ 768   2   0  P.O.D.
+ 766   2   0  Outkast
+ 765   1   0  Oskay, Billy & Michael O'Domhnaill
+ 764  10   0  Osbourne, Ozzy
+ 763   1   0  Osborne, Joan
+ 762   1   0  Orlando, Tony & Dawn
+ 761   1   0  Orchestrial Manoeuvres In The Dark
+ 760   6   0  Orbison, Roy
+ 759   2   0  ORB
+ 758   1   0  One Direction
+ 757   2   0  Old Crow Medicine Show
+ 753   1   0  Odetta  {whrt}
+ 752   1   0  Ochs, Phil
+ 749   2   0  Nugent, Ted
+ 748   1   0  NSYNC
+ 747   1   0  Nova, Aldo
+ 745   2   0  NOFX
+ 743   6   0  Nitty Gritty Dirt Band, the
+ 737   1   0  Nickel Creek
+ 736   1   0  Newton-John, Olivia
+ 735   1   0  Newman, Randy
+ 734   1   0  Newfield, Heidi
+ 732   1   0  New Pornographers, The
+ 731   1   0  New Order
+ 730   4   0  Neville, Aaron
+ 727   1   0  Nelson, Willie & Wynton Marsalis
+ 724   1   0  Ne-Yo
+ 723   1   0  Nazareth
+ 722   2   0  Nas
+ 718   1   0  Mya
+ 717   2   0  My Morning Jacket
+ 716   5   0  My Chemical Romance
+ 715   1   0  Muldaur, Maria
+ 714   1   0  Mraz, Jason
+ 713   1   0  Mountain
+ 712   3   0  Mott the Hoople
+ 711  10   0  Motown
+ 709   8   0  Morton, Jelly Roll
+ 707   1   0  Morris, Maren
+ 702   4   0  Monroe, Bill
+ 701   7   0  Monkees, The
+ 699   1   0  Monae, Janelle
+ 698   1   0  Molly Hatchet
+ 697   2   0  Mogwai
+ 696   1   0  Moby
+ 695   1   0  Mitski
+ 694   2   0  Mitchell, Joni
+ 689   3   0  Miller, Roger
+ 687   3   0  Miller, Glenn
+ 686   1   0  Miguel
+ 685   1   0  Midnight Oil
+ 684   1   0  Michelle Shocked
+ 683   1   0  Michaelson, Ingrid
+ 682   2   0  Michael, George
+ 681   2   0  MGMT
+ 678   4   0  Merchant, Natalie
+ 677   1   0  Mendes, Sergio
+ 675   1   0  Melvins
+ 672   3   0  Megadeth
+ 671   1   0  Meat Puppets
+ 670   3   0  Meat Loaf
+ 669   4   0  McTell, Blind Willie
+ 668   1   0  McLean, Don
+ 667   3   0  McLaughlin, John
+ 664   2   0  McGraw, Tim
+ 663   3   0  McEntire, Reba
+ 662   1   0  McDonald Michael
+ 661   3   0  McCartney, Paul
+ 660   1   0  McBride, Martina
+ 659   2   0  MC5
+ 655   6   0  Mayall, John
+ 651   1   0  Mastodon
+ 650   1   0  Marvelettes, the
+ 649   1   0  Martin, Steve and the Steep Canyon Rangers feat. Edie Brickell
+ 648   1   0  Martin, Ricky
+ 647   3   0  Mars, Bruno
+ 646   1   0  Mars Volta, the
+ 645   2   0  Maroon 5
+ 642   2   0  Marilyn Manson
+ 640   2   0  Manilow, Barry
+ 639   1   0  Manhattans, the
+ 638   7   0  Mamas & The Papas, The
+ 636   1   0  Makeba, Miriam
+ 635   5   0  Mahavishno Orchestra
+ 634   6   0  Magnetic Fields, the
+ 633   1   0  Magic!
+ 631   1   0  Mad Season
+ 630   2   0  MacDemot, Galt
+ 629   1   0  Ma, Yo-Yo
+ 628   2   0  M.I.A.
+ 627  11   0  Lynyrd Skynyrd
+ 626   2   0  Lumineers, the
+ 623   1   0  Lowe, Nick
+ 622   1   0  Lovin' Spoonful, the
+ 620   1   0  Lovelace, Patty
+ 619   1   0  Love, Darlene
+ 617   1   0  Love
+ 616   1   0  Louper, Cyndi
+ 615   3   0  Los Lonely Boys
+ 254   1   0  Los Angeles Guitar Quartet, the
+ 613   1   0  Lorde
+ 612   2   0  Loggins, Kenny
+ 611   1   0  Loggins & Messina
+ 610   1   0  LL Cool J
+ 608   1   0  Little River Band
+ 607   3   0  Little Richard
+ 605   1   0  Lit
+ 601   1   0  Lightman, Toby
+ 599   1   0  Li, Lykke
+ 598   4   0  Lewis, Jerry Lee
+ 596   1   0  Levan, Ivy
+ 595   1   0  Lennox, Annie
+ 593   2   0  Lee, Brenda
+ 592   1   0  LeDoux Chris
+ 591  31   0  Led Zeppelin
+ 590   5   0  Leadbelly
+ 589   1   0  LCD Soundsystrm
+ 588   2   0  Lavigne, Avril
+ 587   2   0  Lauper, Cyndi
+ 253   1   0  Lanz, David
+ 586   1   0  Lang, Peter
+ 585   2   0  Lambert, Miranda
+ 584   1   0  Lambchop
+ 583   6   0  Ladysmith Black Mambazo
+ 582   1   0  Lady Gaga
+ 580   1   0  Kuti, Femi
+ 579   1   0  Kuti, Fela Anikulapo
+ 578   6   0  Kronos Quartet
+ 575   2   0  Kraftwerk
+ 574   4   0  Kottke, Leo
+ 252   1   0  Kogan & Oistrakh
+ 571   3   0  Knight, Gladys & the Pips
+ 570   1   0  KLF, the
+ 569   5   0  Kiss
+ 567  10   0  Kinks, The
+ 565   2   0  King, Carole
+ 564   1   0  King, Ben E
+ 563   1   0  King, BB Big Mama Thorton, Muddy Waters
+ 562   1   0  King, B B & Eric Clapton
+ 560   1   0  King, Albert
+ 559   5   0  King Crimson
+ 557   1   0  Kilar, Wojciech
+ 555   1   0  Kidjo, Angélique
+ 552   6   0  Keys, Alicia
+ 251   5   0  Kempff, Wilhelm
+ 549   1   0  Keith, Toby
+ 548   2   0  KC & The Sunshine Band
+ 547   1   0  Kasabian
+ 546   6   0  Kansas
+ 545   2   0  Kamakawiwo'ole, Israel
+ 543   1   0  Judd, Wynonna
+ 542   7   0  Judas Priest
+ 541   5   0  Joy Division
+ 539   1   0  Joshua Redman Quartet
+ 538   8   0  Joplin, Janis
+ 537   1   0  Jones, Tom
+ 536   2   0  Jones, Rickie Lee
+ 534   5   0  Jones, Norah
+ 532   1   0  Jonas, Nick
+ 529   2   0  Johnson, Robert
+ 526   2   0  Johnson, Blind Willie
+ 524   1   0  John, Dr
+ 520   1   0  Jett, Joan & The Blackhearts
+ 519   1   0  Jets, The
+ 517   1   0  Jesus and Mary Chain, The
+ 516   1   0  Jepsen, Carly Rae
+ 515   2   0  Jennings, Waylon
+ 514   1   0  Jennings, Shooter
+ 512   1   0  Jefferson Starship
+ 511   9   0  Jefferson Airplane
+ 510   1   0  Jean, Wyclef
+ 505   2   0  James, Rick
+ 504   2   0  James, Etta
+ 501   2   0  Jackson, Janet
+ 500   2   0  Isley Brothers, the
+ 499   1   0  Isbell, Jason
+ 498   1   0  Isaacs, the
+ 496  13   0  Iron Maiden
+ 495   1   0  Iron Butterfly
+ 250   2   0  Indiana University
+ 490   1   0  Impressions, the
+ 486   1   0  Iced Earth
+ 484   1   0  Hüsker Dü
+ 483   1   0  Hunt, Sam {whr}
+ 482   3   0  Humble Pie
+ 481   1   0  Howlin' Wolf
+ 479   1   0  Hospitality
+ 477   1   0  Hootie & The Blowfish
+ 249   2   0  Holst
+ 473   5   0  Holly, Buddy
+ 472   2   0  Hollies, the
+ 470   1   0  Hole
+ 469   1   0  Ho, Don
+ 468   2   0  Hill, Lauryn
+ 466   1   0  Hibbert, Toots
+ 465   1   0  Hiatt, John
+ 464   1   0  Herman's Hermits
+ 463  27   0  Hendrix, Jimi
+ 462   1   0  Helmet
+ 461   1   0  Heaven & Hell
+ 459   1   0  Heap, Imogen
+ 458   1   0  Healey, Jeff
+ 456   1   0  Haynes, Warren
+ 248  21   0  Haydn, Joeseph
+ 455   2   0  Hawkwind
+ 454   1   0  Hatchet, Molly
+ 453   2   0  Harvey, PJ
+ 452   1   0  Harrison, George
+ 247   1   0  Handel, Georg Feiedich
+ 448   1   0  Halpern, Steven
+ 447   6   0  Hall & Oates
+ 445   1   0  Haim
+ 444   1   0  Haggard, Merle
+ 441   1   0  Guthrie, Woody
+ 440   1   0  Guthrie, Arlo
+ 438   3   0  Guns N' Roses
+ 437   1   0  Guetta, David
+ 436   2   0  Guess Who, the
+ 435   0   0  Guardians of the Galazy  Disc 2  (flac)
+ 434   0   0  Guardians of the Galaxy  Disc 1  (flac)
+ 433   1   0  Grouplove
+ 432   2   0  Groban, Josh
+ 431   2   0  Green, Al
+ 429   2   0  Greek Music
+ 428   1   0  Great White
+ 425   1   0  Grass Roots, the
+ 424   1   0  Grand Funk Railroad
+ 423   1   0  Gotti, Yo
+ 422   8   0  Gorillaz
+ 420   1   0  Gomez, Selena
+ 419   1   0  Gomez
+ 418   2   0  Goldfrapp
+ 417   1   0  Golden Earring
+ 416   2   0  Godsmack
+ 415   1   0  Gnarls Barkley
+ 413   2   0  Glass, Philip
+ 411   1   0  Gin Blosssoms
+ 410   2   0  Gilmour, David
+ 408   2   0  Gilbert, Brantley
+ 407   2   0  Gilbert & Sullivan
+ 406   1   0  Gesaffelstein
+ 405   2   0  Gerry & the Pacemakers
+ 404   1   0  Gentry, Bobbie
+ 402   1   0  Gaynor, Gloria
+ 401   4   0  Gaye, Marvin
+ 400   1   0  Garcia, Jerry & David Grisman
+ 399   1   0  Garbage
+ 398   2   0  Gaither, Bill & Gloria
+ 392   1   0  Fury, Billy
+ 391   1   0  Furtado, Nelly
+ 390   1   0  Funkadelic
+ 387   1   0  Frehley, Ace
+ 386   1   0  Fray, the
+ 384   5   0  Franklin, Aretha
+ 383   2   0  Francis, Connie
+ 382   7   0  Frampton, Peter
+ 380   1   0  Four Tops
+ 379   3   0  Four Seasons, the
+ 376   1   0  Ford, Tennessee Ernie
+ 373   1   0  Foghat
+ 372   1   0  Foals
+ 371   2   0  Florence + the Machine
+ 370   4   0  Flogging Molly
+ 369   1   0  Flobots
+ 368   9   0  Fleetwood Mac
+ 367   5   0  Fleck, Bela
+ 366   5   0  Flatt & Scruggs
+ 365   4   0  Flaming Lips, the
+ 364   1   0  Flack, Roberta
+ 363   1   0  FKA Twigs
+ 362   2   0  Fixx, the
+ 359   1   0  Fine Young Cannibals
+ 358   1   0  Filter
+ 357   1   0  Fiasco, Lupe
+ 356   1   0  Ferguson, Rebecca
+ 354   2   0  Ferdinand, Franz
+ 353   1   0  Fates Warning
+ 350   1   0  Fagen, Donald
+ 349   4   0  Everyly Brothers
+ 346   1   0  Evans, Sara
+ 345   1   0  Evans, Bill
+ 343   2   0  Eurythmics
+ 341   1   0  Erskine, Rantala Danielsson
+ 340   1   0  Erasure
+ 339   4   0  Enya
+ 338   2   0  Eno, Brian
+ 334   1   0  Emery
+ 333   2   0  Emerson, Lake & Palmer
+ 332   1   0  Ellington, Duke
+ 331  13   0  Electric Light Orchestra
+ 330   1   0  Edelman, Randy
+ 329   1   0  Eazy-E
+ 328   8   0  Earth, Wind and Fire
+ 327   2   0  Earle, Steve
+ 325  36   0  Dylan, Bob
+ 323   1   0  Duffy
+ 322   1   0  Dropkick Murphys
+ 321   4   0  Drive-By Truckers
+ 320   2   0  Drifters, The
+ 319   3   0  Dream Theater
+ 317   2   0  DragonForce
+ 313   1   0  Donovan
+ 312   1   0  Donnas, The
+ 311   3   0  Domino, Fats
+ 309   2   0  Dixon, Willie
+ 308   1   0  Division, Joy
+ 307   1   0  Disturbed
+ 304   2   0  Dion, Celine
+ 303   6   0  Dio
+ 302   2   0  Dido
+ 301   2   0  Diddley, Bo
+ 300   3   0  Diamond, Neil
+ 299   2   0  Di Meola, Al
+ 298   2   0  Devo
+ 296   4   0  Destiny's Child
+ 295   1   0  DeRulo, Jason
+ 294   1   0  Derek and the Dominoes
+ 293   8   0  Depeche Mode
+ 292   1   0  Dennen, Brett
+ 290   1   0  Deftones
+ 288   3   0  Deerhunter
+ 287   7   0  Deep Purple
+ 286   4   0  Decemberists, The
+ 285   1   0  Death From Above
+ 284   1   0  Death Cab For Cutie
+ 283   1   0  Dead Weather, The
+ 282   5   0  Dead Can Dance
+ 281   2   0  De La Soul
+ 280   1   0  Days Of The New
+ 278   8   0  Davis, Miles
+ 276   1   0  Daughtry
+ 275   1   0  Darin, Bobby
+ 273   2   0  Damned, the
+ 270   1   0  Dale, Dick & the Del-Tones
+ 269   1   0  Dailey & Vincent
+ 267   4   0  Daft Punk
+ 242   1   0  Curren$y
+ 241   5   0  Cure, The
+ 239   1   0  Crystals, the
+ 237   1   0  Cruz, Taio
+ 235   3   0  Crow, Sheryl
+ 234   1   0  Crossfade
+ 232   4   0  Crosby, David
+ 231   2   0  Croce, Jim
+ 228   7   0  Cream
+ 227   1   0  Crawford, Randy
+ 225   1   0  Cramer, Floyd
+ 223   4   0  Cowabunga Sets 1-4
+ 222   1   0  Country Joe and the Fish
+ 219   1   0  Cosmic Messenger
+ 217   2   0  Corboz, Michel
+ 215   9   0  Cooke, Sam
+ 211   2   0  Commodores
+ 210   2   0  Colltrane, John
+ 208   4   0  Collective Soul
+ 206   1   0  Cohen, Leonard
+ 205   7   0  Cocker, Joe
+ 204   1   0  Cobain, Kurt
+ 203   1   0  Coasters, the
+ 202   1   0  Club Nouveau
+ 201   4   0  Cline, Patsy
+ 199   1   0  Clegg, Johnny
+ 198   4   0  Clash, the
+ 197   2   0  Clarkson, Kelly
+ 196   1   0  Clark, Terri
+ 194   2   0  Church, Eric
+ 193   1   0  Church, Charlotte
+ 192   1   0  Chromeo
+ 191   4   0  Chieftains, The
+ 190   1   0  Chickenfoot
+ 189   6   0  Chicago
+ 187   1   0  Cherryholmes
+ 186   1   0  Cherry Poppin’ Daddies
+ 182   1   0  Charlie Daniels Band, The
+ 181  10   0  Charles, Ray
+ 180   3   0  Chapman, Tracy
+ 178   3   0  Cave, Nick & the Bad Seeds
+ 177   8   0  Casting Crowns
+ 175   4   0  Casablanca Records
+ 174   5   0  Cars, the
+ 173   4   0  Carpenters, The
+ 172   2   0  Carpenter, Mary Chapin
+ 171   1   0  Carlile, Brandi
+ 170   2   0  Carey, Mariah
+ 169   2   0  Captain Beefheart
+ 166   2   0  Calexico
+ 164   1   0  C + C Music Factory
+ 163   4   0  Byrds, The
+ 162   1   0  Bush, Sam
+ 160   3   0  Burke, Solomon
+ 158   1   0  Buffett, Jimmy
+ 156   2   0  Buena Vista Social Club
+ 154   1   0  Buckley, Tim
+ 153   1   0  Buckley, Jeff
+ 152   2   0  Buckcherry
+ 151   6   0  Bruce, Lenny
+ 263   6   0  Bruce, Lenny
+ 150   1   0  Bruce, Jack
+ 149   2   0  Browne, Jackson
+ 146  14   0  Brooks, Garth
+ 145   4   0  Brill Building
+ 144   1   0  Brice, Lee
+ 143   1   0  Breeders, the
+ 137   2   0  Booker T & the MGs
+ 135   9   0  Bonamassa, Joe
+ 133   1   0  Bon Iver
+ 132   1   0  Bolton, Michael
+ 128   7   0  Blues Traveler
+ 127   3   0  Blues Brother, The
+ 126   1   0  Blue Oyster Cult
+ 125   6   0  Blood, Sweat & Tears
+ 124   3   0  Blondie
+ 123   1   0  Block, Rory
+ 122   5   0  Blink 182
+ 121   6   0  Blind Pig Records
+ 119   1   0  Blind Faith
+ 117   1   0  Blakey, Art
+ 116   1   0  Blackmore's Night
+ 113   1   0  Black Flag
+ 112   3   0  Black Eyed Peas
+ 111  10   0  Black Crowes, The
+ 109   1   0  Big Star
+ 106   1   0  Bieber, Justin
+ 105   1   0  Bibb, Eric
+ 104   1   0  Better Than Ezra
+ 103   5   0  Best of Broadside 1962-1988
+ 102   4   0  Berry, Chuck
+ 100   1   0  Bennett, Tony
+  99   1   0  Benatar, Pat
+  97   1   0  Bega, Lou
+  96   5   0  Bee Gees
+  95   1   0  Bedovin Soundclash
+  94   8   0  Beck, Jeff
+  89   3   0  Be Bop A Lula
+  88   1   0  Bay, James
+  87   1   0  Bauhaus
+  86   1   0  Bat for Lashes
+  85   4   0  Basie, Count
+  84   3   0  Barrueco, Manuel
+  83   1   0  Barnet, Charlie
+  81   2   0  Bar-Kays
+  80   3   0  Band, the
+  79   1   0  Band Perry, the
+  78   1   0  Bananarama
+  77   1   0  Baker, Chet
+  76   4   0  Baez, Joan
+  75   2   0  Badu. Erykah
+  74   3   0  Bad Religion
+  73   7   0  Bad Company
+  72   1   0  Backstreet Boys
+  71   3   0  Bachman-Turner Overdrive
+  69   1   0  Babble
+  68   2   0  B52's
+  67   1   0  B.o.B
+  66   4   0  Avenged Sevenfold
+  64   2   0  Audioslave
+  61   1   0  Atlanta Rhythm Section
+  60   3   0  Atkins, Chet
+  58   1   0  Association, the
+  57   5   0  Asia
+  55   4   0  Armstrong, Louis
+  54   1   0  Armik
+  53   1   0  Argent
+  52   4   0  Arctic Monkeys
+  49   1   0  April Wine
+  47   4   0  Anthrax
+  46   2   0  Anthony, Marc
+  45   1   0  Anka, Paul
+  44   2   0  Animals, the
+  43   1   0  Anderson, Sunshine
+ 245   1   0  Amsterdam Guitar Trio
+  42   2   0  Amos, Tori
+  41   2   0  America
+  40   1   0  Amath, Amon
+  39   1   0  Amadou & Mariam
+  38   4   0  Alpert, Herb
+  36   2   0  All American Rejects, the
+  34   9   0  Alice in Chains
+  33   7   0  Alice Cooper
+  32   1   0  Aldean, Jason
+  31   1   0  Alabama
+  30   4   0  Air supply
+  29   3   0  Air
+  28   1   0  Aiken, Clay
+  27   3   0  Aguilera, Christina
+  25  14   0  Aerosmith
+  24   4   0  Adele
+  23   1   0  Addition, James
+  22   1   0  Adderley, Cannonball
+  21   4   0  Adams, Bryan
+  19   2   0  Ace of Base
+  18  15   0  AC-DC
+  16   5   0  ABBA
+  15   1   0  Aaliyah
+  14   3   0  A Tribe Called Quest
+  13   2   0  A Taste Of Honey
+  12   5   0  A Perfect Circle
+  10   1   0  A Flock of Sea Gulls
+   8   1   0  4 Non Blondes
+   7   6   0  311
+   6   4   0  3 doors down
+   3   1   0  12 Stones
+   1   6   0  10,000 Maniacs

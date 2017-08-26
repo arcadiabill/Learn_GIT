@@ -1,0 +1,245 @@
+<!-- 
+
+// Copyright (C) 1998-04 Mark Jundo P. Documento javelinxxx@yahoo.com
+//
+// This program is free software; you can redistribute it and/or modify it under the terms
+// of the GNU General Public License as published by the Free Software Foundation;
+// either version 2 of the License, or (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+// See the GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License along with this program;
+// if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+// MA 02111-1307 USA.
+//---------------------------------------------------------------------------
+
+In other words feel free to use this code... ;)
+
+-->
+
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Towers of Hanoi</title>
+</head>
+
+<script src="queue.js"></script>
+<script src="stack.js"></script>
+<script language="JavaScript">
+<!--
+
+var timer1 = null, timer2 = null, timer3 = null;
+var nframes = 0, nmoves = 0;
+var qmove = new queue(7);
+var sdisk = new Array(3);
+
+sdisk[0] = new stack(8);
+sdisk[1] = new stack(8);
+sdisk[2] = new stack(8);
+
+var disk = new pair(0, 0);
+var xinc = 1, yinc = -1;
+
+function pair(first, second)
+{
+    this.first = first;
+    this.second = second;
+}
+
+function hanoi(source, extra, target, disks)
+{
+    if (disks < 1) return 0;
+    var moves = hanoi(source, target, extra, disks - 1);
+    qmove.push((new pair(source, target)));
+    moves += hanoi(extra, source, target, disks - 1);
+    return (moves + 1);
+}
+
+function solve()
+{
+    try
+    {
+        resettowers();
+        var ndisks = toh.disks.options[toh.disks.selectedIndex].value;
+        qmove.reset(Math.floor(Math.pow(2, ndisks)) - 1);
+        for (i = 0; i < 3; i++)
+            sdisk[i].reset();
+        for (i = ndisks - 1; i >= 0; i--)
+            sdisk[0].push(i);
+        nmoves = hanoi(0, 1, 2, ndisks);
+        toh.output.value += "Move a disk from:\n";
+        timer1 = setTimeout("animate1()", 50);
+    }
+    catch (e)
+    {
+        alert(e);
+    }
+    
+    return false;
+}
+
+function countframes(source, target)
+{
+    return (11 - sdisk[source].size()) + (11 - sdisk[target].size()) +
+           (Math.abs(target - source) - 1);
+}
+
+function animate1()
+{
+    try
+    {
+        clearTimeout(timer1);
+        nframes = countframes(qmove.front().first, qmove.front().second);
+        toh.output.value += "    peg " + (qmove.front().first + 1) +
+                            " to peg " + (qmove.front().second + 1) + "\n";
+        disk.first = qmove.front().first;
+        disk.second = 11 - sdisk[disk.first].size();
+        yinc = -1;
+        timer2 = setTimeout("animate2()", 50);
+    }
+    catch (e)
+    {
+        alert(e);
+    }
+}
+
+function animate2()
+{
+    try
+    {
+        if (!nframes)
+        {
+            qmove.pop();
+            if (!qmove.empty())
+                timer1 = setTimeout("animate1()", 50);
+            else
+                toh.output.value += "Solved in " + nmoves + " move" +
+                                    (nmoves > 1 ? "s.":".");
+            return;
+        }
+    
+        document["peg" + disk.first + disk.second].src = disk.second < 2 ? "images/space.gif":"images/peg.gif";
+    
+        if (disk.second + yinc < 0)
+        {
+            yinc *= -1;
+            document["peg" + disk.first + disk.second].src = "images/disk" + sdisk[disk.first].top() + ".gif";
+            sdisk[qmove.front().second].push(sdisk[disk.first].top());
+            sdisk[disk.first].pop();
+            xinc = disk.first < qmove.front().second ? 1:-1;
+            timer3 = setTimeout("animate3()", 50);
+            return;
+        }
+        else
+            disk.second += yinc;
+            
+        document["peg" + disk.first + disk.second].src = "images/disk" + sdisk[disk.first].top() + ".gif";
+        nframes--;
+        timer2 = setTimeout("animate2()", 50);
+    }
+    catch (e)
+    {
+        alert(e);
+    }
+}
+
+function animate3()
+{
+    try
+    {
+        if (disk.first == qmove.front().second)
+        {
+            timer2 = setTimeout("animate2()", 50);
+            return;
+        }
+        
+        document["peg" + disk.first + disk.second].src = disk.second < 2 ? "images/space.gif":"images/peg.gif";
+        disk.first += xinc;
+        document["peg" + disk.first + disk.second].src = "images/disk" + sdisk[qmove.front().second].top() + ".gif";        
+        nframes--;
+        timer3 = setTimeout("animate3()", 50);
+    }
+    catch (e)
+    {
+        alert(e);
+    }
+}
+
+function resettowers()
+{
+    if (!document.images)
+        return;
+        
+    for (i = 0; i < 11; i++)
+    {
+        document["peg0" + i].src = i < 2 ? "images/space.gif":"images/peg.gif";
+        document["peg1" + i].src = i < 2 ? "images/space.gif":"images/peg.gif";
+        document["peg2" + i].src = i < 2 ? "images/space.gif":"images/peg.gif";
+    }
+    
+    var ndisks = toh.disks.options[toh.disks.selectedIndex].value;
+    
+    for (i = 0; i < ndisks; i++)
+        document["peg0" + (i + (11 - ndisks))].src = "images/disk" + i + ".gif";
+        
+    toh.output.value = "Press 'Solve' to see solution.\n";
+    
+    if (timer1 != null)
+        clearTimeout(timer1);
+    if (timer2 != null)
+        clearTimeout(timer2);
+    if (timer3 != null)
+        clearTimeout(timer3);
+}
+
+-->
+</script>
+
+<body bgcolor="#ccffff" onload="resettowers()">
+<center>
+<h1>Towers of Hanoi</h1>
+<P>The Towers of Hanoi is a puzzle that can be solved recursively.&nbsp; The objective 
+is to move the all of the discs one at a time from an arbitrary peg or 'tower' 
+to another. Putting a larger disc over a smaller one must be avoided at all 
+times and the transfer must be made in the least possible moves, which is equal 
+to subtracting one from two raised to the number of discs.&nbsp; Thus, the number of
+moves required for moving a stack of three discs is 2^3 - 1 or 7.&nbsp; This
+script solves the Towers of Hanoi problem by moving a stack of 1 to a maximum of
+8 discs from peg 1 to peg 3 with animation.&nbsp; Enjoy!</P>
+<pre>
+<IMG height=15 src="images/space.gif" width=165 border=0 name=peg00><IMG height=15 src="images/space.gif" width=165 border=0 name=peg10><IMG height=15 src="images/space.gif" width=165 border=0 name=peg20>
+<IMG height=15 src="images/space.gif" width=165 border=0 name=peg01><IMG height=15 src="images/space.gif" width=165 border=0 name=peg11><IMG height=15 src="images/space.gif" width=165 border=0 name=peg21>
+<IMG height=15 src="images/peg.gif" width=165 border=0 name=peg02><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg12><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg22>
+<IMG height=15 src="images/peg.gif" width=165 border=0 name=peg03><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg13><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg23>
+<IMG height=15 src="images/peg.gif" width=165 border=0 name=peg04><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg14><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg24>
+<IMG height=15 src="images/peg.gif" width=165 border=0 name=peg05><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg15><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg25>
+<IMG height=15 src="images/peg.gif" width=165 border=0 name=peg06><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg16><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg26>
+<IMG height=15 src="images/peg.gif" width=165 border=0 name=peg07><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg17><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg27>
+<IMG height=15 src="images/disk0.gif" width=165 border=0 name=peg08><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg18><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg28>
+<IMG height=15 src="images/disk1.gif" width=165 border=0 name=peg09><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg19><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg29>
+<IMG height=15 src="images/disk2.gif" width=165 border=0 name=peg010><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg110><IMG height=15 src="images/peg.gif" width=165 border=0 name=peg210>
+<IMG height=15 src="images/base.gif" width=165 border=0><IMG height=15 src="images/base.gif" width=165 border=0><IMG height=15 src="images/base.gif" width=165 border=0>
+</pre>
+<form name="toh" onsubmit="return solve()">
+    <p><TEXTAREA style="WIDTH: 347px; HEIGHT: 166px" name=output rows=10 cols=43></TEXTAREA></p>
+    <p>No. of disks:&nbsp; <select style="WIDTH: 59px;" name="disks" onchange="resettowers()">
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option selected value=3>3</option>
+    <option value=4>4</option>
+    <option value=5>5</option>
+    <option value=6>6</option>
+    <option value=7>7</option>
+    <option value=8>8</option>
+    </select>&nbsp;&nbsp;&nbsp;<input type="submit" value="Solve" name="B1"> 
+    <input type="button" value="Reset" name="B2" onclick="resettowers()"></p>
+</form>
+</center>
+</body>
+
+</html>
+

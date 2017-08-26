@@ -1,0 +1,54 @@
+Checking for invalid music files ...
+CheckFiles: Check files for default music format
+  usage: CheckFiles.py DirToCheck [true]
+         Adding true parameter will fix incorrect files
+
+  Codepage set to 65001
+  Looking for audio files with non-standard format:
+  Preferred format is nn[n] audio track title.ext
+  Example: 01 I'm a Lonesome Traveler.mp3
+
+All the files checked OK
+
+Total Files: 53844
+Good  Files: 47366
+Bad   Files:     0
+Other Files:  6478
+Press any key to continue . . . 
+Checking for extension
+GetExtensions  Rev 0 (25 SEP 2014 whr)
+
+
+   Searching g:\music for extensions and their number.
+
+   Extensions   Number  AudioExt
+   .flac        33,524     *
+   .mp3         14,241     *
+   .jpg          3,049
+   .log          2,112
+   .txt            516
+   .m4a            164     *
+   .png             63
+   .wma             36     *
+   .accurip         26
+   .cue             18
+   .dts             17     *
+   .mpc             16     *
+   .vob              8
+   .bmp              7
+   .tiff             6
+   .pdf              6
+   .ifo              6
+   .gif              6
+   .ffp              6
+   .bup              6
+   .sfv              5
+   .tmp              1
+   .rtf              1
+   .nfo              1
+   .bat              1
+   .avi              1
+
+   47,998 Audio Files found.
+
+Go to Music Dir [y/n]?:

@@ -1,0 +1,200 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<script language="javascript">
+/*
+ *  Matrix Multiplication
+ *  Alex Le
+ *  For CS417 Algorithm Analysis
+ *  Prof. Holliday
+ *  Sping 2006
+ *  Also available online at http://math.lfc.edu/~lenm70/matrix.html
+ */
+
+var counter = 0;
+
+/*
+ * Calculate the best parentherization for matrix multiplication using
+ * Dynamic Programming approach.
+ */
+function matrixMult()
+{
+	counter++; // incrementing global counter
+
+	/* Get form values */
+	var rowsInput = document.getElementById("rows").value;
+	var colsInput = document.getElementById("columns").value;
+	var output    = document.getElementById("output");
+	output.value  += "[Output " + counter + "]----------------------\n";
+
+	rows = rowsInput.split(','); // split the rows into separate values
+	cols = colsInput.split(',');
+
+	n = rows.length;
+
+	/* Testing for valid matrix dimensions */
+	var isM = true;
+	for( i = 0; i < n-1; i ++ )
+	{
+
+		if ( cols[i] != rows[i+1] )
+		{
+			//prompt( "cols" + cols[i] + " rows:" + rows[i+1]);
+			output.value += "Cannot multiply the chain, dimensions not match!\n";
+			isM = false;
+			break;
+		}
+	}
+
+	if ( isM ) output.value += "Matrix-chain is:\n";
+	else return false;
+
+	/* initialize the array */
+	matrix = _2DArray(n,n);
+	sequence = _2DArray(n,n);
+
+	/* run the algorithm */
+	for( d = 1; d <= n ; d++) // diagonal --> the length of the chain
+	{
+		for ( i = 0; i < n - d; i++) // sub problems from
+		{
+			j = i + d;
+			matrix[i][j] = 2147483647; // max int
+			for( k = i; k <= j - 1;k++)
+			{	m = matrix[i][k] + matrix[k+1][j] + rows[i]*cols[k]*cols[j];
+				if ( m < matrix[i][j] )
+				{
+					matrix[i][j] = m;
+					sequence[i][j] = k;
+				}
+			}
+		}
+	}
+
+
+	/* Output the cost table */
+	for( i = 0; i < n ; i++)
+	{
+		for( j=0; j < n; j++)
+		{
+			output.value += matrix[i][j];
+			if ( j < n - 1)
+				output.value += " \t";
+		}
+		output.value += "\n";
+	}
+
+
+	output.value += "\n";
+
+	/* Output the last index of parenthesization */
+	for( i = 0; i < n ; i++)
+	{
+		for( j=0; j < n; j++)
+		{
+			output.value += sequence[i][j];
+			if ( j < n - 1)
+				output.value += " \t";
+		}
+		output.value += "\n";
+	}
+
+	output.value += "The required number of multiplications is " + matrix[0][n-1] + "\n";
+	output.value += "Parenthesized: " + parenthesize(sequence, 0, n-1) + "\n";
+}
+
+
+/*
+ * Return a string represent the best parenthesization.
+ */
+function parenthesize(array, i, j)
+{
+	if ( j > i )
+		s = "(" + parenthesize(array, i, array[i][j]) + "*" + parenthesize(array,array[i][j]+1,j) + ")";
+	else
+		s = characterMap(i);
+
+	return s;
+}
+
+
+/*
+ * Map the index of the array to letters
+ */
+function characterMap(i)
+{
+
+	letters = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	return letters[i];
+}
+
+
+
+
+/*
+ * Return a n x m array with all elements set to 0
+ */
+function _2DArray(rows,cols)
+{
+	var i;
+	var j;
+	var a = new Array(rows);
+	for (i=0; i < rows; i++)
+	{
+		a[i] = new Array(cols);
+		for (j=0; j < cols; j++)
+		{
+			a[i][j] = 0;
+		}
+	}
+	return(a);
+}
+
+/*
+ *  Populate the dataset
+ */
+function problemSet(i)
+{
+	switch(i)
+	{
+		case 0:
+			document.getElementById("rows").value    = "10,20,1,40,5,30";
+			document.getElementById("columns").value = "20,1,40,5,30,15";
+			break;
+		case 1:
+			document.getElementById("rows").value    = "20,2,30,12";
+			document.getElementById("columns").value = "2,30,12,8";
+			break;
+		case 2:
+			document.getElementById("rows").value    = "10,20,50,1";
+			document.getElementById("columns").value = "20,50,1,100";
+			break;
+	}
+
+}
+
+/*
+ * Clear the output area
+ */
+function clearOutput()
+{
+	document.getElementById("output").value = "";
+}
+
+</script>
+
+
+</head><body linkifymax="0" linkifycurrent="0" linkifying="true"><input value="Problem 1" onclick="problemSet(1)" type="button">
+<input value="Problem 2" onclick="problemSet(0)" type="button">
+<input value="Problem 3" onclick="problemSet(2)" type="button"> <br>
+Type in the number of rows <input id="rows" value="10,20,50,1" type="textbox"> 
+eg. p1, p2, p3, p4 <br>
+Type in the number of cols <input id="columns" value="20,50,1,100" type="textbox">
+eg. p2, p3, p4, p5 <br>
+
+<input value="Submit" onclick="matrixMult();" type="button">
+<input value="Clear Output" onclick="clearOutput();" type="button">
+<br>
+Output<br>
+<textarea id="output" cols="80" rows="25"></textarea><img style="cursor: pointer ! important; display: block ! important; position: absolute ! important; padding: 0pt ! important; margin: 0pt ! important; border: medium none ! important; width: 28px ! important; height: 14px ! important; opacity: 0.7 ! important; left: 642px ! important; top: 572px ! important;" title="It's All Text!" src="mcm-matrix_files/gumdrop.png">
+
+</body></html>

@@ -1,0 +1,26 @@
+ Volume in drive E is Data
+ Volume Serial Number is 2F15-26C0
+
+ Directory of E:\Src\c\MD5
+
+12/20/2016  12:24 PM    <DIR>          .
+12/20/2016  12:24 PM    <DIR>          ..
+12/19/2016  01:53 PM            51,561 a.exe
+12/19/2016  11:57 PM         5,557,149 allfiles.txt
+12/20/2016  01:01 AM               452 createUTF.c
+12/20/2016  01:02 AM            52,755 createUTF.exe
+12/19/2016  12:47 AM            19,700 MD5.c
+12/19/2016  12:48 AM            58,721 MD5.exe
+12/19/2016  01:11 AM           488,448 MD5Check.exe
+12/20/2016  01:01 AM               838 readutf.c
+12/20/2016  01:05 AM            52,773 readUTF.exe
+12/20/2016  01:07 AM               467 readUTF2.c
+12/20/2016  12:15 PM             1,519 readUTF3.c
+12/20/2016  12:15 PM            53,721 readUTF3.exe
+12/20/2016  12:25 PM                 0 test.txt
+12/19/2016  05:55 PM             1,600 testStr.c
+12/19/2016  05:56 PM            52,844 testStr.exe
+12/19/2016  01:49 PM               146 testUni.c
+12/20/2016  01:01 AM               452 teƆst.txt
+              17 File(s)      6,393,146 bytes
+               2 Dir(s)  171,695,624,192 bytes free

@@ -1,0 +1,34 @@
+GetExtensions  Rev 0 (25 SEP 2014 whr)
+
+
+   Searching f:\music for extensions and their number.
+
+   Extensions   Number  AudioExt
+   .mp3         19,108     *
+   .flac        16,272     *
+   .jpg          1,994
+   .log            905
+   .txt            513
+   .png             59
+   .wma             51     *
+   .m4a             34     *
+   .dts             17     *
+   .mpc             16     *
+   .ape             16     *
+   .vob              8
+   .pdf              8
+   .bmp              7
+   .wav              6     *
+   .tiff             6
+   .ifo              6
+   .ffp              6
+   .bup              6
+   .sfv              3
+   .accurip          3
+   .gif              2
+   .cue              2
+   .ini              1
+   .bat              1
+   .avi              1
+
+   35,520 Audio Files found.

@@ -1,0 +1,13 @@
+mariaDB
+username: root
+password: malela02
+database: crashcourse
+
+login as follows:
+From a command prompt type:
+  mariadb -u root -password
+  password: malela02
+  
+Once connected use the crashcourse database for it's exercises
+
+MariaDB [(none)]> use crashcourse

@@ -1,0 +1,18 @@
+###################################################################
+#
+# replace 00-00-00-00-00-00 in every-feature with your real ptc_hostid
+#
+###################################################################
+################ MATHCAD Prime 3.0 ################################
+#
+INCREMENT mathcad ptc_d 22.0 permanent uncounted \
+	D030C0203F06E53DAD33 VENDOR_STRING="VSVER=2.0 LO=(19,254,255,256,257)" \
+	HOSTID=PTC_HOSTID=00-00-00-00-00-00 SUPERSEDE TS_OK \
+	vendor_info="VIVER=2.0 EXTERNAL_NAME=" ISSUER=Team-SolidSQUAD \
+	ISSUED=2-apr-2010 NOTICE=PTC SIGN="092F DBD8 F7BA \
+	EC9D 51E5 453C 93A1 D63D 0BC7 3126 8493 2C23 32A9 A98F 8BC0 1BEB \
+	0F0F 5C63 6933 5B61 613F 0CFB 235B 9C1B B39E 274F 2E5A 60E1 1FEF \
+	DE6A" SIGN2="092F DBD8 F7BA EC9D 51E5 453C 93A1 D63D 0BC7 3126 \
+	8493 2C23 32A9 A98F 8BC0 1BEB 0F0F 5C63 6933 5B61 613F 0CFB 235B \
+	9C1B B39E 274F 2E5A 60E1 1FEF DE6A"
+#

@@ -1,0 +1,54 @@
+Page: 1, print_it.c
+
+   1:	/* print_it.c--This program prints a listing with line numbers! */
+   2:	#include <stdlib.h>
+   3:	#include <stdio.h>
+   4:	
+   5:	void do_heading(char *filename);
+   6:	
+   7:	int line = 0, page = 0;
+   8:	
+   9:	int main( int argv, char *argc[] )
+  10:	{
+  11:	  char buffer[256];
+  12:	  FILE *fp;
+  13:	
+  14:	  if( argv < 2 ){
+  15:	     fprintf(stderr, "\nProper Usage is: " );
+  16:	     fprintf(stderr, "\n\nprint_it filename.ext\n" );
+  17:	     return(1);
+  18:	  }
+  19:	
+  20:	  if (( fp = fopen( argc[1], "r" )) == NULL ){
+  21:	       fprintf( stderr, "Error opening file, %s!", argc[1]);
+  22:	       return(1);
+  23:	  }
+  24:	
+  25:	  page = 0;
+  26:	  line = 1;
+  27:	  do_heading( argc[1]);
+  28:	
+  29:	  while( fgets( buffer, 256, fp ) != NULL )
+  30:	  {
+  31:	     if( line % 55 == 0 )
+  32:	        do_heading( argc[1] );
+  33:	
+  34:	     fprintf( stdout, "%4d:\t%s", line++, buffer );
+  35:	  }
+  36:	
+  37:	  fprintf( stdout, "\f" );
+  38:	  fclose(fp);
+  39:	  return 0;
+  40:	}
+  41:	
+  42:	void do_heading( char *filename )
+  43:	{
+  44:	   page++;
+  45:	
+  46:	   if ( page > 1)
+  47:	      fprintf( stdout, "\f" );
+  48:	
+  49:	   fprintf( stdout, "Page: %d, %s\n\n", page, filename );
+  50:	}
+  51:	
+
