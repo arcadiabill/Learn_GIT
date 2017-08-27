@@ -15,9 +15,9 @@
  | Requires: <sys/stat.h>
  |           <error.h>       for global error varable
  |
- | Notes   : Function limited to 32-bit filesize (around 4GB).
- |           Replaces doesFileExist() which returned 0 if the
- |           file existed and 1 if it did not exist.
+ | Notes   : 1. Function limited to 32-bit filesize (around 2GB)
+ |              even though it's not trying to get the filesize.
+ |           2. Same code as doesFileExist(const char* filename)
  |
  | --Ver--  ---Date---  ----By----  ---Description of the Change---
  |     1    08-24-2017      whr     Initial release
@@ -25,18 +25,19 @@
  *------------------------------------------------------------------*/
 #include <sys/stat.h>
 #include <errno.h>           // for global errno
+
 #define true  1
 #define false 0
 
-unsigned int
+int
 FileExists(const char *filename)
 {
-    struct stat st;
+   struct stat st;
 
-    errno = 0;               // Set global error var to 0
-    if(stat(filename, &st) != 0) {
-        return false;
-    }
+   errno = 0;               // Set global error var to 0
+   if(stat(filename, &st) != 0) {
+      return false;
+   }
 
-    return true;
+   return true;
 }

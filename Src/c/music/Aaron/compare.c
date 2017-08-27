@@ -3,12 +3,12 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>			// for exit()
+#include <stdlib.h>        // for exit()
 #include <errno.h>
 #include <sys/stat.h>
 
-#define BUFFER  1024			// Maximun length of input line -- probably < 80 chars
-#define CommonFile "CommonFile.txt"	// Temp file to store albums in both old & new music files
+#define BUFFER  1024       // Maximun length of input line -- probably < 80 chars
+#define CommonFile "CommonFile.txt" // Temp file to store albums in both old & new music files
 
 // Functions
 int  InitParams(int argc, char *NewFile, char *OldFile);
@@ -20,23 +20,23 @@ char  AlbumNew[BUFFER];
 char  AlbumOld[BUFFER];
 char  AlbumCom[BUFFER];
 
-FILE *hNewFile = NULL;			// File handle for new music file
-FILE *hOldFile = NULL;			// File handle for old music file
+FILE *hNewFile = NULL;        // File handle for new music file
+FILE *hOldFile = NULL;        // File handle for old music file
 FILE *hComFile = NULL;
 
 int main(int argc, char *argv[1])
 {
     int   nLenNew = 0;
     int   nLenCom = 0;
-    //	int   nLenOld = 0;
+    //   int   nLenOld = 0;
     int   nNew    = 0;
     int   nOld    = 0;
     int   nCommon = 0;
-    //	int   nSkip   = 0;
-    //	int   nErrs   = 0;
+    //   int   nSkip   = 0;
+    //   int   nErrs   = 0;
     int   nTotNew = 0;
-    //	long unsigned nPosNew  = 0;
-    //	long unsigned nPosOld  = 0;
+    //   long unsigned nPosNew  = 0;
+    //   long unsigned nPosOld  = 0;
 
     // Check for proper usage, Initialize files & create temp file for common albums in old & new
     nTotNew = InitParams(argc, argv[1], argv[2]);
@@ -78,7 +78,7 @@ int main(int argc, char *argv[1])
     while(fgets(AlbumCom, BUFFER, hComFile) != NULL)
     {
         nLenCom = strlen(AlbumCom);
-        if(nLenCom > 2) AlbumCom[nLenCom -1] = '\0';		// Remove '\n'
+        if(nLenCom > 2) AlbumCom[nLenCom -1] = '\0';     // Remove '\n'
 
         ++nTotNew;
         while(fgets(AlbumNew, BUFFER, hNewFile) != 0)
@@ -120,8 +120,8 @@ int InitParams(int argc, char *NewFile, char *OldFile)
 {
     int  nErrs   = 0;
     int  nTotNew = 0;
-    long unsigned nSizeNew = 0;		// File Size New Albums file
-    long unsigned nSizeOld = 0;		// File Size Old Albums file
+    long unsigned nSizeNew = 0;     // File Size New Albums file
+    long unsigned nSizeOld = 0;     // File Size Old Albums file
     long unsigned nTemp    = 0;
 
     if(argc != 3) {
@@ -155,7 +155,7 @@ int InitParams(int argc, char *NewFile, char *OldFile)
         if( (hNewFile = fopen(NewFile, "r")) == NULL) ++nErrs;
         if( (hOldFile = fopen(OldFile, "r")) == NULL) ++nErrs;
     }
-    else {		// Switch files so that the largest one is called new music file
+    else {     // Switch files so that the largest one is called new music file
         nTemp    = nSizeOld;
         nSizeOld = nSizeNew;
         nSizeNew = nTemp;
@@ -169,7 +169,7 @@ int InitParams(int argc, char *NewFile, char *OldFile)
         exit(EXIT_FAILURE);
     }
 
-    fprintf(stderr, "New File size: %lu, Old File Size %lu\n", nSizeNew, nSizeOld)	;
+    fprintf(stderr, "New File size: %lu, Old File Size %lu\n", nSizeNew, nSizeOld)  ;
 
     // Read New File to find the number of new albums
     while(fgets(AlbumNew, BUFFER, hNewFile) != NULL)
@@ -177,7 +177,7 @@ int InitParams(int argc, char *NewFile, char *OldFile)
         ++nTotNew;
     }
 
-    rewind(hNewFile);			// Rewind New Music file
+    rewind(hNewFile);         // Rewind New Music file
 
     return nTotNew;
 
@@ -210,12 +210,12 @@ int MakeCommonAlbum(void)
     int   nLenOld = 0;
     int   nOld    = 0;
     int   nWrote  = 0;
-    fprintf(stderr, "Entering MakeCommonAlbum()\n")	;
+    fprintf(stderr, "Entering MakeCommonAlbum()\n")   ;
     // Create temp file containig albums common to both files
     fseek(hOldFile, 0, SEEK_SET);
     fseek(hNewFile, 0, SEEK_SET);
 
-    while(fgets(AlbumOld, BUFFER, hOldFile) != NULL)		// Read old music file on outside loop
+    while(fgets(AlbumOld, BUFFER, hOldFile) != NULL)     // Read old music file on outside loop
     {
         // Now we have an album from the old music file
         nLenOld = strlen(AlbumOld);
@@ -245,16 +245,14 @@ int MakeCommonAlbum(void)
             }
         }
 
-        if(feof(hNewFile)) {				// Went through all new Albums didn't find old one
+        if(feof(hNewFile)) {           // Went through all new Albums didn't find old one
             fseek(hNewFile, 0, SEEK_SET);
         }
     }
-    fflush(hComFile);			// Keep hComFile open but flush the data
+    fflush(hComFile);         // Keep hComFile open but flush the data
     fprintf(stderr, "Finished MakeCommonAlbum, Number record: %4d\n", nOld);
     fprintf(stderr, "Press [Enter] to continue\n");
     getchar();
 
     return nOld;
 }
-
-

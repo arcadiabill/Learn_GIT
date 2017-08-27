@@ -1,3 +1,6 @@
+:: Script to compile source file & place it into the library
+:: Created 2017-08-27
+:: ---------------------------------------------------------
 @echo off
 cls
 echo.
@@ -10,9 +13,13 @@ if XX==X%1X (
 )
 
 :: See if the file exists before trying to compile it
-test.exe %1.c
+if not exist tstFileExist.exe (
+  echo Error: Need pgm tstFileExist.exe to work
+  EXIT /B 1)
+
+tstFileExist %1.c
 if errorlevel 1 (
-  echo %1.c does not exists.
+  echo Error: File %1.c does not exists, can't compile.
   echo -----------------------
   call :Usage
   EXIT /B 1
@@ -23,7 +30,7 @@ gcc -Wall -std=c11 -c %1.c || goto :BAD
 
 :: Compilation success if we got here
   echo Compilation successful.
-  ar crs h:\src\lib\libwhr.a %1.o || goto :BAD2
+  ar crs \src\lib\libwhr.a %1.o || goto :BAD2
   del %1.o
 
 :: We are still good so show what's in the library

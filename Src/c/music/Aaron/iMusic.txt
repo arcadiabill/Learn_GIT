@@ -1,8 +1,8 @@
 Directory scan of f:\music
 #
   10,000 Maniacs  {whr}
-    MTV Unplugged  (flac)
-    Our Time In Eden  (flac)
+    MTV Unplugged  (flac
+    Our Time In Eden  (flac12345)
   10cc
     Look Hear 1980  (flac)
     The Definitive Collection  (flac)

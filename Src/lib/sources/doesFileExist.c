@@ -6,31 +6,38 @@
  |
  | Params  : Filename of the file
  |
- | Returns : 0 of file exists or 1 if file does not exist
+ | Returns : 1 if file exists or 0 if file does not exist. It also
+ |           returns global variable errno. If there was an error,
+ |           errno will be set to a non-zero value.
  |
  | Usage   : doesFileExist(fileName);
  |
  | Requires: <sys/stat.h>
  |           <error.h>
  |
- | Notes   : Function limited to 32-bit filesize (around 4GB)
+ | Notes   : 1. Function limited to 32-bit filesize (around 2GB)
+ |              even though it's not trying to get the filesize
+ |           2. Same code as FileExists(const char* filename)
  |
  | --Ver--  ---Date---  ----By----  ---Description of the Change---
  |     1    09-22-2016      whr     Initial release
  |
  *------------------------------------------------------------------*/
 #include <sys/stat.h>
-#include <errno.h>
+#include <errno.h>                  // For global errno
 
-long unsigned
+#define TRUE  1
+#define FALSE 0
+
+int
 doesFileExist(const char* filename)
 {
-    struct stat st;
+   struct stat st;
 
-    errno = 0;
-    if(stat(filename, &st) != 0) {
-        return 1;  //for Cmd line parameter
-    }
+   errno = 0;
+   if(stat(filename, &st) != 0) {  // errno set if you need to
+      return FALSE;                 // see why this failed
+   }
 
-    return 0;
+   return TRUE;
 }

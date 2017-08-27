@@ -47,23 +47,3 @@ main(int argc, char * argv[])
    fclose(in);
    return 0;
 }
-
-
-/* -------------------------------------------------------------
- * SpacesBefore( char *line)
- *
- * Purpose: Determine number of spaces at front of a string.
- *
- * Version: 1.0 11/30/2015
- *
- * Returns: Number of blank spaces at the string's beginning.
- * -----------------------------------------------------------*/
-int SpacesBefore(char *str)
-{
-   int nSpaces  = 0;
-
-   while(str[nSpaces] == ' ')
-      ++nSpaces;
-
-   return nSpaces;
-}

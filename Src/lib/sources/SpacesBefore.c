@@ -1,7 +1,7 @@
 #include <string.h>
 #include <ctype.h>
 /*----------------------------------------------------- SpacesBefore.c
- | Function: SpacesBefore(const char *string)
+ | Function: size_t SpacesBefore(const char *string)
  | Author  : william h robertson
  |
  | Purpose : Get number of leading spaces in a string.
@@ -21,7 +21,8 @@
  |                                  Conding Standard, 2016 Edition
  *------------------------------------------------------------------*/
 
-size_t SpacesBefore(const char *s)
+size_t
+SpacesBefore(const char *s)
 {
    const char *t = s;
    size_t length = strlen(s) + 1;
