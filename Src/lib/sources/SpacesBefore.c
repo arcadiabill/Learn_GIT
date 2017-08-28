@@ -21,14 +21,13 @@
  |                                  Conding Standard, 2016 Edition
  *------------------------------------------------------------------*/
 
-size_t
+int
 SpacesBefore(const char *s)
 {
    const char *t = s;
-   size_t length = strlen(s) + 1;
+   int length = strlen(s) + 1;
 
-   while(isspace( (unsigned char) *t) && (t-s < length))
-   {
+   while(isspace( (unsigned char) *t) && (t-s < length)){
       ++t;
    }
 
