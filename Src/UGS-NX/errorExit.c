@@ -1,5 +1,5 @@
 /*-------------------------------------------------- errorExit.c -----
- | Function: errorExit(char *msg)
+ | Function: errorExit(const char *msg)
  | Author  : william h robertson
  |
  | Purpose : Write a mesage to stderr & exit program
@@ -18,7 +18,7 @@
 #include <stdlib.h>
 
  void
- errorExit(char *msg)
+ errorExit(const char *msg)
  {
     fprintf(stderr, msg);
     fprintf(stderr, "\nPress [Enter] key to return to the OS");

@@ -26,40 +26,32 @@ int main(int argc, char *argv[])
    time_t endTime, startTime;
 
    /* Use Default file is none give on command line */
-   if(argc == 1)
-   {
+   if(argc == 1) {
       strncpy(file, FILE_NAME, BUFF-1);
-   }
-   else
-   {
+   } else {
       strncpy(file, argv[1], BUFF-1);
    }
 
    pInput = fopen(file,"r");
-   if (!pInput)
-	{
-		printf("Couldn't open file: %s\n", file);
-		system("pause");
-		exit(EXIT_FAILURE);
-	}
+   if (!pInput) {
+      printf("Couldn't open file: %s\n", file);
+      system("pause");
+      exit(EXIT_FAILURE);
+   }
 
 //   system("chcp 65001");               // Use utf-8
    time(&startTime);
    nFiles = nFound = nMissing = 0;
-   while(fgets(line, BUFF, pInput) != NULL)
-   {
+   while(fgets(line, BUFF, pInput) != NULL) {
       nChars = (unsigned) strlen(line) - 1;
       line[nChars] = '\0';		// Remove \n
 
       ++nFiles;
       found = doesFileExists(line);
-      if(found)
-      {
+      if(found) {
          ++nFound;
 //         printf("Found  : %s\n", line);
-      }
-      else
-      {
+      } else {
          ++nMissing;
          printf("%6d: Missing %s\n", nFiles, line);
       }
@@ -85,11 +77,9 @@ int doesFileExists(const char* filename)
    int exist = stat(filename, &buffer);
    if(exist == 0)
       return 1;		// File Exists
-   else
-   {
+   else {
       // Try fopen
-      if((tmp = fopen(filename, "rb encoding=utf-8")) != NULL)
-      {
+      if((tmp = fopen(filename, "rb encoding=utf-8")) != NULL) {
          fclose(tmp);
 
          // remove later -- didn't work
@@ -99,8 +89,7 @@ int doesFileExists(const char* filename)
       }
 
       // Try _wfopen()  -- didn't work
-      if((tmp = _wfopen((const wchar_t *)filename, (const wchar_t*) "rb | _O_U8TEXT | _O_UTF8")) != NULL)
-      {
+      if((tmp = _wfopen((const wchar_t *)filename, (const wchar_t*) "rb | _O_U8TEXT | _O_UTF8")) != NULL) {
          fclose(tmp);
          return 1;
       }

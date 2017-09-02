@@ -9,15 +9,15 @@ int dirDepth( char *sString );
 int main(int argc, char **argv)
 {
 	char *line;
-	char full[MAX_PATH];
+	char full[PATH_MAX];
 	int  nLength;
 	
-	line = _fullpath(full, ".", MAX_PATH);
+	line = _fullpath(full, ".", _MAX_PATH);
 	pathSep = strchr(line, '/')? '/': '\\';
 	
 	if(argc > 1)
 	{
-		line = _fullpath(full, argv[1], MAX_PATH);
+		line = _fullpath(full, argv[1], _MAX_PATH);
 	}
 	nLength = strlen(line);
 	printf("String: %s\n  Length: %d\n", line, nLength);

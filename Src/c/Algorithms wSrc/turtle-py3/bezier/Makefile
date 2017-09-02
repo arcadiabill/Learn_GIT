@@ -1,3 +1,3 @@
 all::
-	cl /W4 bezier.cpp
-	./bezier.exe | head
+	g++ -o bezier bezier.cpp
+	bezier.exe | head

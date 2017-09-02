@@ -21,8 +21,8 @@ int main(int argc, char **argv)
       printf("cannot open file %s\n", argv[1] );
       return 1;
    }
-   /* 
-    * Use ReadLine to read the whole file - just print it out for 
+   /*
+    * Use ReadLine to read the whole file - just print it out for
     * this example.
     */
    while( ReadLine(line, MAXLINE, fp) ) {
@@ -45,12 +45,11 @@ int ReadLine(char *buff, int size, FILE *fp)
    if (fgets(buff, size, fp) == NULL) {
       *buff = '\0';                   /* EOF */
       return false;
-   }
-   else {
+   } else {
       /* remove newline */
       if ((tmp = strrchr(buff, '\n')) != NULL) {
          *tmp = '\0';
       }
    }
-   return true; 
+   return true;
 }

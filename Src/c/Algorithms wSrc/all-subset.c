@@ -2,7 +2,7 @@
 // (needed for HW, for finding largest clique):
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <strings.h>
 
 void subset(char *set, int i){
   int k=0;

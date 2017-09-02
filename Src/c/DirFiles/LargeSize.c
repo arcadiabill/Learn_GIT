@@ -25,7 +25,7 @@ int main(int argc, char * argv[])
 	 }
 
 	 _fseeki64(fptr, (__int64)0, SEEK_END);
-	 printf("File Name: %s, Size: %lld\n", argv[1], _ftelli64(fptr));
+	 printf("File Name: %s, Size: %I64d\n", argv[1], _ftelli64(fptr));
       
     return 0;
 }

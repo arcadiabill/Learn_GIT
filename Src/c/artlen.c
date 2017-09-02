@@ -19,24 +19,20 @@ main(int argc, char * argv[])
    char minLine[MAX_LINE];
 
    FILE *fIn = fopen("artist.txt", "r");
-   if(fIn == NULL)
-   {
+   if(fIn == NULL) {
       printf("Error: Couldn't open artist.txt\n");
       return 1;
    }
 
-   while( fgets (str, MAX_LINE, fIn)!=NULL )
-   {
+   while( fgets (str, MAX_LINE, fIn)!=NULL ) {
       nLength = strlen(str);
-      if(nLength > nMax)
-      {
+      if(nLength > nMax) {
          nMax  = nLength;
          strncpy(maxLine, str, nMax);
          maxLine[nLength] = '\0';
       }
 
-      if(nLength < nMin)
-      {
+      if(nLength < nMin) {
          nMin = nLength;
          strncpy(minLine, str, nMin);
          minLine[nLength] = '\0';

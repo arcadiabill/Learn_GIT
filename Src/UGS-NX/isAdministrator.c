@@ -6,7 +6,7 @@
  | Params  : required: Either true or false (1 or 0)
  | Returns : void
  | Usage   : isAdministrator(true);
- | Requires: <stdio.h>                 errorExit(Msg)
+ | Requires: <stdio.h                  errorExit(Msg)
  | Notes   : Function tries to create 'test.txt' in a system dir.
  |           If succesful, it deletes the file on exit.
  | --Ver--  ---Date---  ----By----  --- Description of the Change ---
@@ -14,8 +14,6 @@
  |
  *------------------------------------------------------------------*/
 #include <stdio.h>
-#define  true   1
-#define  false  0            // Not used, just here for looks
 
 void errorExit(char *msg); 
 
@@ -26,8 +24,10 @@ isAdministrator(int required)
    char *tmp = "c:/Program Files/test.txt";
 
    // if Admin Required, check if we are running as Administrator
+   // Actually, we only test if we can write to the Program Files DIR
    if(required && ( out = fopen(tmp, "wb") ) == NULL)
-		errorExit("Error: Program must be run as an Administrator.");
+		errorExit("Error: Couldn't write to the Program Files Directory"
+                "\n       Try running as an Administrator.");
 
    if(out){
       fclose(out);

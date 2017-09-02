@@ -36,8 +36,7 @@ static double FocalplaneUnits;
 static int ExifImageWidth;
 static int MotorolaOrder = 0;
 
-typedef struct
-{
+typedef struct {
    unsigned short Tag;
    char * Desc;
 } TagTable_t;
@@ -45,8 +44,7 @@ typedef struct
 
 //--------------------------------------------------------------------------
 // Table of Jpeg encoding process names
-static TagTable_t ProcessTable[] =
-{
+static TagTable_t ProcessTable[] = {
    { M_SOF0,   "Baseline"},
    { M_SOF1,   "Extended sequential"},
    { M_SOF2,   "Progressive"},
@@ -123,8 +121,7 @@ static int BytesPerFormat[] = {0,1,1,2,4,8,1,1,2,4,8,4,8};
 #define TAG_THUMBNAIL_OFFSET  0x0201
 #define TAG_THUMBNAIL_LENGTH  0x0202
 
-static TagTable_t TagTable[] =
-{
+static TagTable_t TagTable[] = {
    {   0x100,   "ImageWidth"},
    {   0x101,   "ImageLength"},
    {   0x102,   "BitsPerSample"},
@@ -216,13 +213,10 @@ static TagTable_t TagTable[] =
 //--------------------------------------------------------------------------
 static void Put16u(void * Short, unsigned short PutValue)
 {
-   if (MotorolaOrder)
-   {
+   if (MotorolaOrder) {
       ((uchar *)Short)[0] = (uchar)(PutValue>>8);
       ((uchar *)Short)[1] = (uchar)PutValue;
-   }
-   else
-   {
+   } else {
       ((uchar *)Short)[0] = (uchar)PutValue;
       ((uchar *)Short)[1] = (uchar)(PutValue>>8);
    }
@@ -234,12 +228,9 @@ static void Put16u(void * Short, unsigned short PutValue)
 //--------------------------------------------------------------------------
 static int Get16u(void * Short)
 {
-   if (MotorolaOrder)
-   {
+   if (MotorolaOrder) {
       return (((uchar *)Short)[0] << 8) | ((uchar *)Short)[1];
-   }
-   else
-   {
+   } else {
       return (((uchar *)Short)[1] << 8) | ((uchar *)Short)[0];
    }
 }
@@ -249,13 +240,10 @@ static int Get16u(void * Short)
 //--------------------------------------------------------------------------
 static int Get32s(void * Long)
 {
-   if (MotorolaOrder)
-   {
+   if (MotorolaOrder) {
       return  ((( char *)Long)[0] << 24) | (((uchar *)Long)[1] << 16)
               | (((uchar *)Long)[2] << 8 ) | (((uchar *)Long)[3] << 0 );
-   }
-   else
-   {
+   } else {
       return  ((( char *)Long)[3] << 24) | (((uchar *)Long)[2] << 16)
               | (((uchar *)Long)[1] << 8 ) | (((uchar *)Long)[0] << 0 );
    }
@@ -274,8 +262,7 @@ static unsigned Get32u(void * Long)
 //--------------------------------------------------------------------------
 static void PrintFormatNumber(void * ValuePtr, int Format, int ByteCount)
 {
-   switch(Format)
-   {
+   switch(Format) {
    case FMT_SBYTE:
    case FMT_BYTE:
       printf("%02x\n",*(uchar *)ValuePtr);
@@ -316,8 +303,7 @@ static double ConvertAnyFormat(void * ValuePtr, int Format)
    double Value;
    Value = 0;
 
-   switch(Format)
-   {
+   switch(Format) {
    case FMT_SBYTE:
       Value = *(signed char *)ValuePtr;
       break;
@@ -333,17 +319,13 @@ static double ConvertAnyFormat(void * ValuePtr, int Format)
       break;
 
    case FMT_URATIONAL:
-   case FMT_SRATIONAL:
-   {
+   case FMT_SRATIONAL: {
       int Num,Den;
       Num = Get32s(ValuePtr);
       Den = Get32s(4+(char *)ValuePtr);
-      if (Den == 0)
-      {
+      if (Den == 0) {
          Value = 0;
-      }
-      else
-      {
+      } else {
          Value = (double)Num/Den;
       }
       break;
@@ -384,15 +366,11 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
    {
       unsigned char * DirEnd;
       DirEnd = DIR_ENTRY_ADDR(DirStart, NumDirEntries);
-      if (DirEnd+4 > (OffsetBase+ExifLength))
-      {
-         if (DirEnd+2 == OffsetBase+ExifLength || DirEnd == OffsetBase+ExifLength)
-         {
+      if (DirEnd+4 > (OffsetBase+ExifLength)) {
+         if (DirEnd+2 == OffsetBase+ExifLength || DirEnd == OffsetBase+ExifLength) {
             // Version 1.3 of jhead would truncate a bit too much.
             // This also caught later on as well.
-         }
-         else
-         {
+         } else {
             // Note: Files that had thumbnails trimmed with jhead 1.3 or earlier
             // might trigger this.
             ErrNonfatal("Illegally sized directory",0,0);
@@ -402,13 +380,11 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
       if (DirEnd > LastExifRefd) LastExifRefd = DirEnd;
    }
 
-   if (ShowTags)
-   {
+   if (ShowTags) {
       printf("Directory with %d entries\n",NumDirEntries);
    }
 
-   for (de=0; de<NumDirEntries; de++)
-   {
+   for (de=0; de<NumDirEntries; de++) {
       int Tag, Format, Components;
       unsigned char * ValuePtr;
       int ByteCount;
@@ -419,8 +395,7 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
       Format = Get16u(DirEntry+2);
       Components = Get32u(DirEntry+4);
 
-      if ((Format-1) >= NUM_FORMATS)
-      {
+      if ((Format-1) >= NUM_FORMATS) {
          // (-1) catches illegal zero case as unsigned underflows to positive large.
          ErrNonfatal("Illegal number format %d for tag %04x", Format, Tag);
          continue;
@@ -428,53 +403,43 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
 
       ByteCount = Components * BytesPerFormat[Format];
 
-      if (ByteCount > 4)
-      {
+      if (ByteCount > 4) {
          unsigned OffsetVal;
          OffsetVal = Get32u(DirEntry+8);
          // If its bigger than 4 bytes, the dir entry contains an offset.
-         if (OffsetVal+ByteCount > ExifLength)
-         {
+         if (OffsetVal+ByteCount > ExifLength) {
             // Bogus pointer offset and / or bytecount value
             ErrNonfatal("Illegal value pointer for tag %04x", Tag,0);
             continue;
          }
          ValuePtr = OffsetBase+OffsetVal;
-      }
-      else
-      {
+      } else {
          // 4 bytes or less and value is in the dir entry itself
          ValuePtr = DirEntry+8;
       }
 
-      if (LastExifRefd < ValuePtr+ByteCount)
-      {
+      if (LastExifRefd < ValuePtr+ByteCount) {
          // Keep track of last byte in the exif header that was actually referenced.
          // That way, we know where the discardable thumbnail data begins.
          LastExifRefd = ValuePtr+ByteCount;
 
       }
 
-      if (ShowTags)
-      {
+      if (ShowTags) {
          // Show tag name
-         for (a=0;; a++)
-         {
-            if (TagTable[a].Tag == 0)
-            {
+         for (a=0;; a++) {
+            if (TagTable[a].Tag == 0) {
                printf("  Unknown Tag %04x Value = ", Tag);
                break;
             }
-            if (TagTable[a].Tag == Tag)
-            {
+            if (TagTable[a].Tag == Tag) {
                printf("    %s = ",TagTable[a].Desc);
                break;
             }
          }
 
          // Show tag value.
-         switch(Format)
-         {
+         switch(Format) {
 
          case FMT_UNDEFINED:
          // Undefined is typically an ascii string.
@@ -484,19 +449,14 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
          {
             int NoPrint = 0;
             printf("\"");
-            for (a=0; a<ByteCount; a++)
-            {
-               if (isprint((ValuePtr)[a]))
-               {
+            for (a=0; a<ByteCount; a++) {
+               if (isprint((ValuePtr)[a])) {
                   putchar((ValuePtr)[a]);
                   NoPrint = 0;
-               }
-               else
-               {
+               } else {
                   // Avoiding indicating too many unprintable characters of proprietary
                   // bits of binary information this program may not know how to parse.
-                  if (!NoPrint)
-                  {
+                  if (!NoPrint) {
                      putchar('?');
                      NoPrint = 1;
                   }
@@ -513,8 +473,7 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
       }
 
       // Extract useful components of tag
-      switch(Tag)
-      {
+      switch(Tag) {
 
       case TAG_MAKE:
          strncpy(ImageInfo.CameraMake, ValuePtr, 31);
@@ -531,56 +490,42 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
 
       case TAG_USERCOMMENT:
          // Olympus has this padded with trailing spaces.  Remove these first.
-         for (a=ByteCount;;)
-         {
+         for (a=ByteCount;;) {
             a--;
-            if ((ValuePtr)[a] == ' ')
-            {
+            if ((ValuePtr)[a] == ' ') {
                (ValuePtr)[a] = '\0';
-            }
-            else
-            {
+            } else {
                break;
             }
             if (a == 0) break;
          }
 
          // Copy the comment
-         if (memcmp(ValuePtr, "ASCII",5) == 0)
-         {
-            for (a=5; a<10; a++)
-            {
+         if (memcmp(ValuePtr, "ASCII",5) == 0) {
+            for (a=5; a<10; a++) {
                int c;
                c = (ValuePtr)[a];
-               if (c != '\0' && c != ' ')
-               {
+               if (c != '\0' && c != ' ') {
                   strncpy(ImageInfo.Comments, a+ValuePtr, 199);
                   break;
                }
             }
             //  @@ Seems need to guess encoding. N3 needs ascii or utf-8 encoding
-         }
-         else
-         {
+         } else {
 //                    ErrNonfatal("Comment not explicitly ASCII, starts: 0x%02x 0x%02x", ValuePtr[0], ValuePtr[1]);
             int couldBeASCII = 1;
-            for (a=0; ValuePtr[a]; a++)
-            {
+            for (a=0; ValuePtr[a]; a++) {
                int c;
                c = (ValuePtr)[a];
-               if ((c > 127)||(c<0))
-               {
+               if ((c > 127)||(c<0)) {
                   couldBeASCII = 0;
                   ErrNonfatal("Comment  contains non-ASCII 0x%02x)", ValuePtr[0], ValuePtr[1]);
                   break;
                }
             }
-            if (couldBeASCII)
-            {
+            if (couldBeASCII) {
                strncpy(ImageInfo.Comments, ValuePtr, 199);
-            }
-            else      // @@ 16-bit termination?
-            {
+            } else {  // @@ 16-bit termination?
                strncpy(ImageInfo.Comments, ValuePtr, 199);
             }
          }
@@ -596,8 +541,7 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
       case TAG_MAXAPERTURE:
          // More relevant info always comes earlier, so only use this field if we don't
          // have appropriate aperture information yet.
-         if (ImageInfo.ApertureFNumber == 0)
-         {
+         if (ImageInfo.ApertureFNumber == 0) {
             ImageInfo.ApertureFNumber
                = (float)exp(ConvertAnyFormat(ValuePtr, Format)*log(2)*0.5);
          }
@@ -624,28 +568,23 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
       case TAG_SHUTTERSPEED:
          // More complicated way of expressing exposure time, so only use
          // this value if we don't already have it from somewhere else.
-         if (ImageInfo.ExposureTime == 0)
-         {
+         if (ImageInfo.ExposureTime == 0) {
             ImageInfo.ExposureTime
                = (float)(1/exp(ConvertAnyFormat(ValuePtr, Format)*log(2)));
          }
          break;
 
       case TAG_FLASH:
-         if ((int)ConvertAnyFormat(ValuePtr, Format) & 7)
-         {
+         if ((int)ConvertAnyFormat(ValuePtr, Format) & 7) {
             ImageInfo.FlashUsed = TRUE;
-         }
-         else
-         {
+         } else {
             ImageInfo.FlashUsed = FALSE;
          }
          break;
 
       case TAG_ORIENTATION:
          ImageInfo.Orientation = (int)ConvertAnyFormat(ValuePtr, Format);
-         if (ImageInfo.Orientation < 1 || ImageInfo.Orientation > 8)
-         {
+         if (ImageInfo.Orientation < 1 || ImageInfo.Orientation > 8) {
             ErrNonfatal("Undefined rotation value %d", ImageInfo.Orientation, 0);
             ImageInfo.Orientation = 0;
          }
@@ -664,8 +603,7 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
          break;
 
       case TAG_FOCALPLANEUNITS:
-         switch((int)ConvertAnyFormat(ValuePtr, Format))
-         {
+         switch((int)ConvertAnyFormat(ValuePtr, Format)) {
          case 1:
             FocalplaneUnits = 25.4;
             break; // inch
@@ -725,16 +663,12 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
          break;
 
       case TAG_EXIF_OFFSET:
-      case TAG_INTEROP_OFFSET:
-      {
+      case TAG_INTEROP_OFFSET: {
          unsigned char * SubdirStart;
          SubdirStart = OffsetBase + Get32u(ValuePtr);
-         if (SubdirStart < OffsetBase || SubdirStart > OffsetBase+ExifLength)
-         {
+         if (SubdirStart < OffsetBase || SubdirStart > OffsetBase+ExifLength) {
             ErrNonfatal("Illegal exif or interop ofset directory link",0,0);
-         }
-         else
-         {
+         } else {
             ProcessExifDir(SubdirStart, OffsetBase, ExifLength);
          }
          continue;
@@ -750,52 +684,38 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
       unsigned char * SubdirStart;
       unsigned Offset;
 
-      if (DIR_ENTRY_ADDR(DirStart, NumDirEntries) + 4 <= OffsetBase+ExifLength)
-      {
+      if (DIR_ENTRY_ADDR(DirStart, NumDirEntries) + 4 <= OffsetBase+ExifLength) {
          Offset = Get32u(DirStart+2+12*NumDirEntries);
-         if (Offset)
-         {
+         if (Offset) {
             SubdirStart = OffsetBase + Offset;
-            if (SubdirStart > OffsetBase+ExifLength)
-            {
-               if (SubdirStart < OffsetBase+ExifLength+20)
-               {
+            if (SubdirStart > OffsetBase+ExifLength) {
+               if (SubdirStart < OffsetBase+ExifLength+20) {
                   // Jhead 1.3 or earlier would crop the whole directory!
                   // As Jhead produces this form of format incorrectness,
                   // I'll just let it pass silently
                   if (ShowTags) printf("Thumbnail removed with Jhead 1.3 or earlier\n");
-               }
-               else
-               {
+               } else {
                   ErrNonfatal("Illegal subdirectory link",0,0);
                }
-            }
-            else
-            {
-               if (SubdirStart <= OffsetBase+ExifLength)
-               {
+            } else {
+               if (SubdirStart <= OffsetBase+ExifLength) {
                   ProcessExifDir(SubdirStart, OffsetBase, ExifLength);
                }
             }
          }
-      }
-      else
-      {
+      } else {
          // The exif header ends before the last next directory pointer.
       }
    }
 
 
-   if (ThumbnailSize && ThumbnailOffset)
-   {
-      if (ThumbnailSize + ThumbnailOffset <= ExifLength)
-      {
+   if (ThumbnailSize && ThumbnailOffset) {
+      if (ThumbnailSize + ThumbnailOffset <= ExifLength) {
          // The thumbnail pointer appears to be valid.  Store it.
          ImageInfo.ThumbnailPointer = OffsetBase + ThumbnailOffset;
          ImageInfo.ThumbnailSize = ThumbnailSize;
 
-         if (ShowTags)
-         {
+         if (ShowTags) {
             printf("Thumbnail size: %d bytes\n",ThumbnailSize);
          }
       }
@@ -814,50 +734,40 @@ void process_EXIF (unsigned char * ExifSection, unsigned int length)
    FocalplaneUnits = 0;
    ExifImageWidth = 0;
 
-   if (ShowTags)
-   {
+   if (ShowTags) {
       printf("Exif header %d bytes long\n",length);
    }
 
    {
       // Check the EXIF header component
       static uchar ExifHeader[] = "Exif\0\0";
-      if (memcmp(ExifSection+2, ExifHeader,6))
-      {
+      if (memcmp(ExifSection+2, ExifHeader,6)) {
          ErrNonfatal("Incorrect Exif header",0,0);
          return;
       }
    }
 
-   if (memcmp(ExifSection+8,"II",2) == 0)
-   {
+   if (memcmp(ExifSection+8,"II",2) == 0) {
       if (ShowTags) printf("Exif section in Intel order\n");
       MotorolaOrder = 0;
-   }
-   else
-   {
-      if (memcmp(ExifSection+8,"MM",2) == 0)
-      {
+   } else {
+      if (memcmp(ExifSection+8,"MM",2) == 0) {
          if (ShowTags) printf("Exif section in Motorola order\n");
          MotorolaOrder = 1;
-      }
-      else
-      {
+      } else {
          ErrNonfatal("Invalid Exif alignment marker.",0,0);
          return;
       }
    }
 
    // Check the next value for correctness.
-   if (Get16u(ExifSection+10) != 0x2a)
-   {
+   if (Get16u(ExifSection+10) != 0x2a) {
       ErrNonfatal("Invalid Exif start (1)",0,0);
       return;
    }
 
    FirstOffset = Get32u(ExifSection+12);
-   if (FirstOffset < 8 || FirstOffset > 16)
-   {
+   if (FirstOffset < 8 || FirstOffset > 16) {
       // I used to ensure this was set to 8 (website I used indicated its 8)
       // but PENTAX Optio 230 has it set differently, and uses it as offset. (Sept 11 2002)
       ErrNonfatal("Suspicious offset %d of first IFD value",FirstOffset,0);
@@ -870,13 +780,11 @@ void process_EXIF (unsigned char * ExifSection, unsigned int length)
    ProcessExifDir(ExifSection+8+FirstOffset, ExifSection+8, length-6);
 
    // Compute the CCD width, in milimeters.
-   if (FocalplaneXRes != 0)
-   {
+   if (FocalplaneXRes != 0) {
       ImageInfo.CCDWidth = (float)(ExifImageWidth * FocalplaneUnits / FocalplaneXRes);
    }
 
-   if (ShowTags)
-   {
+   if (ShowTags) {
       printf("Non settings part of Exif header: %d bytes\n",ExifSection+length-LastExifRefd);
    }
 }
@@ -897,20 +805,17 @@ int RemoveThumbnail(unsigned char * ExifSection, unsigned int Length)
       ShowTags = ShowTagsTemp;
    }
 
-   if (DirWithThumbnailPtrs)
-   {
+   if (DirWithThumbnailPtrs) {
       int de;
       int NumDirEntries;
       NumDirEntries = Get16u(DirWithThumbnailPtrs);
 
-      for (de=0; de<NumDirEntries; de++)
-      {
+      for (de=0; de<NumDirEntries; de++) {
          int Tag;
          char * DirEntry;
          DirEntry = DIR_ENTRY_ADDR(DirWithThumbnailPtrs, de);
          Tag = Get16u(DirEntry);
-         if (Tag == TAG_THUMBNAIL_OFFSET || Tag == TAG_THUMBNAIL_LENGTH)
-         {
+         if (Tag == TAG_THUMBNAIL_OFFSET || Tag == TAG_THUMBNAIL_LENGTH) {
             // We remove data out of the exif directory by doing a memmove on the rest
             // of the directory to close the gap.
             // It would of course be far better to have a general purpose read/write
@@ -946,8 +851,7 @@ int Exif2tm(struct tm * timeptr, char * ExifTime)
               &timeptr->tm_hour, &timeptr->tm_min, &timeptr->tm_sec);
 
 
-   if (a == 6)
-   {
+   if (a == 6) {
       timeptr->tm_isdst = -1;
       timeptr->tm_mon -= 1;      // Adjust for unix zero-based months
       timeptr->tm_year -= 1900;  // Adjust for year starting at 1900
@@ -975,19 +879,16 @@ void ShowImageInfo(void)
       printf("File date    : %s\n",Temp);
    }
 
-   if (ImageInfo.CameraMake[0])
-   {
+   if (ImageInfo.CameraMake[0]) {
       printf("Camera make  : %s\n",ImageInfo.CameraMake);
       printf("Camera model : %s\n",ImageInfo.CameraModel);
    }
-   if (ImageInfo.DateTime[0])
-   {
+   if (ImageInfo.DateTime[0]) {
       printf("Date/Time    : %s\n",ImageInfo.DateTime);
    }
    printf("Resolution   : %d x %d\n",ImageInfo.Width, ImageInfo.Height);
 
-   if (ImageInfo.Orientation > 1)
-   {
+   if (ImageInfo.Orientation > 1) {
       // Only print orientation if one was supplied, and if its not 1 (normal orientation)
 
       // 1 - "The 0th row is at the visual top of the image,    and the 0th column is the visual left-hand side."
@@ -1002,8 +903,7 @@ void ShowImageInfo(void)
 
       // Note: The descriptions here are the same as the name of the command line
       // ption to pass to jpegtran to right the image
-      static char * OrientTab[9] =
-      {
+      static char * OrientTab[9] = {
          "Undefined",
          "Normal",           // 1
          "flip horizontal",  // left right reversed mirror
@@ -1018,76 +918,57 @@ void ShowImageInfo(void)
       printf("Orientation  : %s\n", OrientTab[ImageInfo.Orientation]);
    }
 
-   if (ImageInfo.IsColor == 0)
-   {
+   if (ImageInfo.IsColor == 0) {
       printf("Color/bw     : Black and white\n");
    }
-   if (ImageInfo.FlashUsed >= 0)
-   {
+   if (ImageInfo.FlashUsed >= 0) {
       printf("Flash used   : %s\n",ImageInfo.FlashUsed ? "Yes" :"No");
    }
-   if (ImageInfo.FocalLength)
-   {
+   if (ImageInfo.FocalLength) {
       printf("Focal length : %4.1fmm",(double)ImageInfo.FocalLength);
-      if (ImageInfo.CCDWidth)
-      {
+      if (ImageInfo.CCDWidth) {
          printf("  (35mm equivalent: %dmm)",
                 (int)(ImageInfo.FocalLength/ImageInfo.CCDWidth*36 + 0.5));
       }
       printf("\n");
    }
 
-   if (ImageInfo.CCDWidth)
-   {
+   if (ImageInfo.CCDWidth) {
       printf("CCD width    : %4.2fmm\n",(double)ImageInfo.CCDWidth);
    }
 
-   if (ImageInfo.ExposureTime)
-   {
-      if (ImageInfo.ExposureTime < 0.010)
-      {
+   if (ImageInfo.ExposureTime) {
+      if (ImageInfo.ExposureTime < 0.010) {
          printf("Exposure time: %6.4f s ",(double)ImageInfo.ExposureTime);
-      }
-      else
-      {
+      } else {
          printf("Exposure time: %5.3f s ",(double)ImageInfo.ExposureTime);
       }
-      if (ImageInfo.ExposureTime <= 0.5)
-      {
+      if (ImageInfo.ExposureTime <= 0.5) {
          printf(" (1/%d)",(int)(0.5 + 1/ImageInfo.ExposureTime));
       }
       printf("\n");
    }
-   if (ImageInfo.ApertureFNumber)
-   {
+   if (ImageInfo.ApertureFNumber) {
       printf("Aperture     : f/%3.1f\n",(double)ImageInfo.ApertureFNumber);
    }
-   if (ImageInfo.Distance)
-   {
-      if (ImageInfo.Distance < 0)
-      {
+   if (ImageInfo.Distance) {
+      if (ImageInfo.Distance < 0) {
          printf("Focus dist.  : Infinite\n");
-      }
-      else
-      {
+      } else {
          printf("Focus dist.  : %4.2fm\n",(double)ImageInfo.Distance);
       }
    }
 
 
-   if (ImageInfo.ISOequivalent)  // 05-jan-2001 vcs
-   {
+   if (ImageInfo.ISOequivalent) { // 05-jan-2001 vcs
       printf("ISO equiv.   : %2d\n",(int)ImageInfo.ISOequivalent);
    }
-   if (ImageInfo.ExposureBias)  // 05-jan-2001 vcs
-   {
+   if (ImageInfo.ExposureBias) { // 05-jan-2001 vcs
       printf("Exposure bias:%4.2f\n",(double)ImageInfo.ExposureBias);
    }
 
-   if (ImageInfo.Whitebalance)  // 05-jan-2001 vcs
-   {
-      switch(ImageInfo.Whitebalance)
-      {
+   if (ImageInfo.Whitebalance) { // 05-jan-2001 vcs
+      switch(ImageInfo.Whitebalance) {
       case 1:
          printf("Whitebalance : sunny\n");
          break;
@@ -1101,10 +982,8 @@ void ShowImageInfo(void)
          printf("Whitebalance : cloudy\n");
       }
    }
-   if (ImageInfo.MeteringMode)  // 05-jan-2001 vcs
-   {
-      switch(ImageInfo.MeteringMode)
-      {
+   if (ImageInfo.MeteringMode) { // 05-jan-2001 vcs
+      switch(ImageInfo.MeteringMode) {
       case 2:
          printf("Metering Mode: center weight\n");
          break;
@@ -1116,10 +995,8 @@ void ShowImageInfo(void)
          break;
       }
    }
-   if (ImageInfo.ExposureProgram)  // 05-jan-2001 vcs
-   {
-      switch(ImageInfo.ExposureProgram)
-      {
+   if (ImageInfo.ExposureProgram) { // 05-jan-2001 vcs
+      switch(ImageInfo.ExposureProgram) {
       case 2:
          printf("Exposure     : program (auto)\n");
          break;
@@ -1131,10 +1008,8 @@ void ShowImageInfo(void)
          break;
       }
    }
-   if (ImageInfo.CompressionLevel)  // 05-jan-2001 vcs
-   {
-      switch(ImageInfo.CompressionLevel)
-      {
+   if (ImageInfo.CompressionLevel) { // 05-jan-2001 vcs
+      switch(ImageInfo.CompressionLevel) {
       case 1:
          printf("Jpeg Quality : basic\n");
          break;
@@ -1149,10 +1024,8 @@ void ShowImageInfo(void)
 
 
 
-   for (a=0;; a++)
-   {
-      if (ProcessTable[a].Tag == ImageInfo.Process || ProcessTable[a].Tag == 0)
-      {
+   for (a=0;; a++) {
+      if (ProcessTable[a].Tag == ImageInfo.Process || ProcessTable[a].Tag == 0) {
          printf("Jpeg process : %s\n",ProcessTable[a].Desc);
          break;
       }
@@ -1161,28 +1034,20 @@ void ShowImageInfo(void)
 
 
    // Print the comment. Print 'Comment:' for each new line of comment.
-   if (ImageInfo.Comments[0])
-   {
+   if (ImageInfo.Comments[0]) {
       int a,c;
       printf("Comment      : ");
-      for (a=0; a<MAX_COMMENT; a++)
-      {
+      for (a=0; a<MAX_COMMENT; a++) {
          c = ImageInfo.Comments[a];
          if (c == '\0') break;
-         if (c == '\n')
-         {
+         if (c == '\n') {
             // Do not start a new line if the string ends with a carriage return.
-            if (ImageInfo.Comments[a+1] != '\0')
-            {
+            if (ImageInfo.Comments[a+1] != '\0') {
                printf("\nComment      : ");
-            }
-            else
-            {
+            } else {
                printf("\n");
             }
-         }
-         else
-         {
+         } else {
             putchar(c);
          }
       }
@@ -1222,13 +1087,11 @@ void ShowImageInfoInN3(void)
       printf("\tfile:date   \"%s\";\n",Temp);
    }
 
-   if (ImageInfo.CameraMake[0])
-   {
+   if (ImageInfo.CameraMake[0]) {
       printf("\texif:cameraMake    \"%s\";\n",ImageInfo.CameraMake);
       printf("\texif:cameraModel   \"%s\";\n",ImageInfo.CameraModel);
    }
-   if (ImageInfo.DateTime[0] && (ImageInfo.DateTime[0] != ' ')&& (ImageInfo.DateTime[0] != '0'))
-   {
+   if (ImageInfo.DateTime[0] && (ImageInfo.DateTime[0] != ' ')&& (ImageInfo.DateTime[0] != '0')) {
       ImageInfo.DateTime[4] = '-';    // @@overwrite - Make ISO format
       ImageInfo.DateTime[7] = '-';
       ImageInfo.DateTime[10] = 'T';
@@ -1236,8 +1099,7 @@ void ShowImageInfoInN3(void)
    }
    printf("\texif:pixelsWide  \"%d\";  exif:pixelsHigh \"%d\";\n",ImageInfo.Width, ImageInfo.Height);
 
-   if (ImageInfo.Orientation > 1)
-   {
+   if (ImageInfo.Orientation > 1) {
       // Only print orientation if one was supplied, and if its not 1 (normal orientation)
 
       // 1 - "The 0th row is at the visual top of the image,    and the 0th column is the visual left-hand side."
@@ -1252,8 +1114,7 @@ void ShowImageInfoInN3(void)
 
       // Note: The descriptions here are the same as the name of the command line
       // ption to pass to jpegtran to right the image
-      static char * OrientTab[9] =
-      {
+      static char * OrientTab[9] = {
          "undefined",
          "normal",           // 1
          "flipHorizontal",  // left right reversed mirror
@@ -1269,80 +1130,59 @@ void ShowImageInfoInN3(void)
              OrientTab[ImageInfo.Orientation], ImageInfo.Orientation);
    }
 
-   if (ImageInfo.IsColor != 0)
-   {
+   if (ImageInfo.IsColor != 0) {
       printf("\ta exif:ColorPicture;\n");
-   }
-   else
-   {
+   } else {
       printf("\ta exif:BlackAndWhitePicture;\n");
    }
-   if (ImageInfo.FlashUsed >= 0)
-   {
+   if (ImageInfo.FlashUsed >= 0) {
       printf("\texif:flashUsed  \"%d\";\n",ImageInfo.FlashUsed);
    }
-   if (ImageInfo.FocalLength)
-   {
+   if (ImageInfo.FocalLength) {
       printf("\texif:focalLength \"%4.1f\"; # mm",(double)ImageInfo.FocalLength);
-      if (ImageInfo.CCDWidth)
-      {
+      if (ImageInfo.CCDWidth) {
          printf(" (35mm equivalent: %dmm)",
                 (int)(ImageInfo.FocalLength/ImageInfo.CCDWidth*36 + 0.5));
       }
       printf("\n");
    }
 
-   if (ImageInfo.CCDWidth)
-   {
+   if (ImageInfo.CCDWidth) {
       printf("\texif:ccdWidth  \"%4.2f\"; # mm\n",(double)ImageInfo.CCDWidth);
    }
 
-   if (ImageInfo.ExposureTime)
-   {
-      if (ImageInfo.ExposureTime < 0.010)
-      {
+   if (ImageInfo.ExposureTime) {
+      if (ImageInfo.ExposureTime < 0.010) {
          printf("\texif:exposureTime \"%6.4f\"; # s ",(double)ImageInfo.ExposureTime);
-      }
-      else
-      {
+      } else {
          printf("\texif:exposureTime \"%5.3f\"; # s ",(double)ImageInfo.ExposureTime);
       }
-      if (ImageInfo.ExposureTime <= 0.5)
-      {
+      if (ImageInfo.ExposureTime <= 0.5) {
          printf(" (1/%d)",(int)(0.5 + 1/ImageInfo.ExposureTime));
       }
       printf("\n");
    }
-   if (ImageInfo.ApertureFNumber)
-   {
+   if (ImageInfo.ApertureFNumber) {
       printf("\texif:apertureF  \"%3.1f\";\n",(double)ImageInfo.ApertureFNumber);
    }
-   if (ImageInfo.Distance)
-   {
-      if (ImageInfo.Distance < 0)
-      {
+   if (ImageInfo.Distance) {
+      if (ImageInfo.Distance < 0) {
          printf("\texif:focusDistance exif:Infinity;\n");
-      }
-      else
-      {
+      } else {
          printf("\texif:focusDistance \"%4.2f\"; # m\n",(double)ImageInfo.Distance);
       }
    }
 
 
-   if (ImageInfo.ISOequivalent)  // 05-jan-2001 vcs
-   {
+   if (ImageInfo.ISOequivalent) { // 05-jan-2001 vcs
       printf("\texif:isoEquiv \"%2d\";\n",(int)ImageInfo.ISOequivalent);
    }
-   if (ImageInfo.ExposureBias)  // 05-jan-2001 vcs
-   {
+   if (ImageInfo.ExposureBias) { // 05-jan-2001 vcs
       printf("\texif:exposureBias \"%4.2f\";\n",(double)ImageInfo.ExposureBias);
    }
 
-   if (ImageInfo.Whitebalance)  // 05-jan-2001 vcs
-   {
-      switch(ImageInfo.Whitebalance)
-      {
+   if (ImageInfo.Whitebalance) { // 05-jan-2001 vcs
+      switch(ImageInfo.Whitebalance) {
       case 1:
          printf("\texif:whiteBalance  exif:sunny;\n");
          break;
@@ -1356,10 +1196,8 @@ void ShowImageInfoInN3(void)
          printf("\texif:whiteBalance exif:cloudy;\n");
       }
    }
-   if (ImageInfo.MeteringMode)  // 05-jan-2001 vcs
-   {
-      switch(ImageInfo.MeteringMode)
-      {
+   if (ImageInfo.MeteringMode) { // 05-jan-2001 vcs
+      switch(ImageInfo.MeteringMode) {
       case 2:
          printf("\texif:meteringMode exif:centerWeight;\n");
          break;
@@ -1371,10 +1209,8 @@ void ShowImageInfoInN3(void)
          break;
       }
    }
-   if (ImageInfo.ExposureProgram)  // 05-jan-2001 vcs
-   {
-      switch(ImageInfo.ExposureProgram)
-      {
+   if (ImageInfo.ExposureProgram) { // 05-jan-2001 vcs
+      switch(ImageInfo.ExposureProgram) {
       case 2:
          printf("\texif:exposure exif:program; # (auto)\n");
          break;
@@ -1386,10 +1222,8 @@ void ShowImageInfoInN3(void)
          break;
       }
    }
-   if (ImageInfo.CompressionLevel)  // 05-jan-2001 vcs
-   {
-      switch(ImageInfo.CompressionLevel)
-      {
+   if (ImageInfo.CompressionLevel) { // 05-jan-2001 vcs
+      switch(ImageInfo.CompressionLevel) {
       case 1:
          printf("\texif:jpegQuality exif:basic;\n");
          break;
@@ -1404,10 +1238,8 @@ void ShowImageInfoInN3(void)
 
 
 
-   for (a=0;; a++)
-   {
-      if (ProcessTable[a].Tag == ImageInfo.Process || ProcessTable[a].Tag == 0)
-      {
+   for (a=0;; a++) {
+      if (ProcessTable[a].Tag == ImageInfo.Process || ProcessTable[a].Tag == 0) {
          printf("\texif:jpegProcess \"%s\";\n",ProcessTable[a].Desc);
          break;
       }
@@ -1415,44 +1247,31 @@ void ShowImageInfoInN3(void)
 
 
    // Print the comment.
-   if (ImageInfo.Comments[0])
-   {
+   if (ImageInfo.Comments[0]) {
       int a,c, multiline;
       multiline = 0;
       printf("\texif:comment \"\"\"");
-      for (a=0; a<MAX_COMMENT; a++)
-      {
+      for (a=0; a<MAX_COMMENT; a++) {
          c = ImageInfo.Comments[a];
          if (c == '\0') break;
-         if (c == '\n')
-         {
+         if (c == '\n') {
             // Do not start a new line if the single line string ends with a newline.
-            if (ImageInfo.Comments[a+1] != '\0')
-            {
-               if (multiline == 1)
-               {
+            if (ImageInfo.Comments[a+1] != '\0') {
+               if (multiline == 1) {
                   printf("\n");
                }
             }
             multiline = 1;
-         }
-         else
-         {
-            if (c== '"')
-            {
+         } else {
+            if (c== '"') {
                printf("\\\"");
-            }
-            else
-            {
-               if ((c<0) || (c>127))   // Guess 16 bit unicode
-               {
+            } else {
+               if ((c<0) || (c>127)) { // Guess 16 bit unicode
                   //		    printf("\\u%02x%02x", (unsigned char)ImageInfo.Comments[a], (unsigned char)ImageInfo.Comments[a+1]);
                   //		    a = a + 1;
                   ImageInfo.Comments[0] = 0;
                   break; // forget it...
-               }
-               else
-               {
+               } else {
                   putchar(c);
                }
             }
@@ -1474,32 +1293,26 @@ void ShowConciseImageInfo(void)
 
    printf(" %dx%d",ImageInfo.Width, ImageInfo.Height);
 
-   if (ImageInfo.ExposureTime)
-   {
+   if (ImageInfo.ExposureTime) {
       printf(" (1/%d)",(int)(0.5 + 1/ImageInfo.ExposureTime));
    }
 
-   if (ImageInfo.ApertureFNumber)
-   {
+   if (ImageInfo.ApertureFNumber) {
       printf(" f/%3.1f",(double)ImageInfo.ApertureFNumber);
    }
 
-   if (ImageInfo.FocalLength)
-   {
-      if (ImageInfo.CCDWidth)
-      {
+   if (ImageInfo.FocalLength) {
+      if (ImageInfo.CCDWidth) {
          // 35 mm equivalent focal length.
          printf(" f(35)=%dmm",(int)(ImageInfo.FocalLength/ImageInfo.CCDWidth*35 + 0.5));
       }
    }
 
-   if (ImageInfo.FlashUsed > 0)
-   {
+   if (ImageInfo.FlashUsed > 0) {
       printf(" (flash)");
    }
 
-   if (ImageInfo.IsColor == 0)
-   {
+   if (ImageInfo.IsColor == 0) {
       printf(" (bw)");
    }
 

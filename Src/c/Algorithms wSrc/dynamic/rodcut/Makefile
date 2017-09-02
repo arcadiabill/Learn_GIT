@@ -1,5 +1,6 @@
-rodcut:
-	g++ -Wall rod-cut.cpp -o rod-cut.exe
-	 ./rod-cut.exe
-	cl rod-cut.c
-	 ./rod-cut.exe
+all:
+	g++ -Wall rod-cut.cpp -o rod-cutC++.exe
+	./rod-cutC++.exe
+
+	gcc -Wall rod-cut.c -o rod-cutC 
+	./rod-cutC.exe

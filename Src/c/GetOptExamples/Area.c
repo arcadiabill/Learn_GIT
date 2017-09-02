@@ -1,4 +1,3 @@
-#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
@@ -21,7 +20,7 @@ int main(int argc, char *argv[]) {
         {"perimeter", no_argument,       0,  'p' },
         {"length",    required_argument, 0,  'l' },
         {"breadth",   required_argument, 0,  'b' },
-        {0,           0,                 0,  0   }
+        {0,           0,                 0,   0  }
     };
 
     int long_index =0;

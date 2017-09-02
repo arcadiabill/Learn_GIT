@@ -9,12 +9,9 @@ main()
 {
    char file[] = "e:\\downloads\\compression.pdf";
 
-   if(isPDFfile(file))
-   {
+   if(isPDFfile(file)) {
       printf("%s seems to be a pdf file.\n", file);
-   }
-   else
-   {
+   } else {
       printf("%s doesn't seem to be a pdf file\n", file);
    }
 }
@@ -48,21 +45,19 @@ isPDFfile(const char *PDFfile)
    FILE *input;
    char line[6];             // for %PDF- or %%EOF char strings
 
-   if((input = fopen(PDFfile, "rb")) == NULL)
-   {
+   if((input = fopen(PDFfile, "rb")) == NULL) {
       fprintf(stderr, "Couldn't Open: %s\n", PDFfile);
       return 0;
    }
 
    fread(line, 5, 1, input);
-   if(strncmp(line, "%PDF-", 5))
-   {  // Not a PDF return 0
+   if(strncmp(line, "%PDF-", 5)) {
+      // Not a PDF return 0
       fclose(input);
       return 0;
    }
 
-   if(fseek(input, -6, SEEK_END) == -1)  // -6 since last char is 0A
-   {
+   if(fseek(input, -6, SEEK_END) == -1) { // -6 since last char is 0A
       fprintf(stderr, "Seek to file end failed for file: %s\n", PDFfile);
       fclose(input);
       return 0;

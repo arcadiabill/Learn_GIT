@@ -12,7 +12,7 @@ long long fsize(const char *filename);
 int
 main(int argc, char *argv[])
 {
-	long fileSize;
+	long long fileSize;
 	
 	if( argc < 2 )
 	{
@@ -20,14 +20,14 @@ main(int argc, char *argv[])
 		return -1;
 	}
 	
-	fileSize = (long) fsize(argv[1]);
-	if(fileSize == -1)
+	fileSize = fsize(argv[1]);
+	if(fileSize == -1LL)
 	{
 		fprintf(stderr, "Cannot determine size of %s: %s\n", argv[1], strerror(errno));
 		return -1;
 	}
 	else
-		fprintf(stdout, "File size of %s: %lld\n", argv[1], fileSize);
+		fprintf(stdout, "File size of %s: %I64d\n", argv[1], fileSize);
 
 	return 0;
 }
@@ -38,7 +38,7 @@ fsize(const char *filename)
 	struct stat st;
 
    if (stat(filename, &st) == 0)
-		return (long long)st.st_size;
+		return st.st_size;
 	else
-		return -1L;
+		return -1LL;
 }

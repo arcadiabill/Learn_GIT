@@ -1,5 +1,4 @@
-
 msa::
-	cl /W4 maxsum-subarray.c
+	gcc -omaxsum-subarray maxsum-subarray.c
 	./maxsum-subarray.exe
 

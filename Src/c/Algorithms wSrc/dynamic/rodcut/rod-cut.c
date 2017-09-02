@@ -9,7 +9,7 @@ int p[N], r[N], s[N];
 
 // initializer for prices and optimal solutions
 void init() {
-	memset(r, -1, N); r[0] = 0; // r = {-1,0,0...}
+	memset(r, -1, sizeof(int)*N); r[0] = 0; // r = {-1,0,0...}
 	p[0] = 0; p[1] = 1; p[2] = 5; p[3] = 8; p[4] = 9; p[5] = 10;
 	p[6] = 17; p[7] = 17; p[8] = 20; p[9] = 24; p[10] = 30;
 }

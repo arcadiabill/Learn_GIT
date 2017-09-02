@@ -6,7 +6,7 @@
 #| Note    : ListFiles will parse the subdirectory containing the
 #|           UgsUpdate showing the files that need updating. This
 #|           list needs to be redireted to UgsUpdate.txt and the
-#|           source and destination directories for the files addedwill
+#|           source and destination directories for the files added
 #|           at the top. See UgsUpdate.c for the file's structure.
 #|
 #| --Ver--  ---Date---  ----By----  ---Description of the Change---
@@ -14,7 +14,7 @@
 #|
 #*------------------------------------------------------------------*/
 CC = gcc
-CFLAGS = -std=gnu11 -Wall
+CFLAGS = -std=gnu11 -Wall -o3
 OBJ = ugsUpdate.o addPathSprtr.o copyFile.o doesFileExist.o\
       errorExit.o fixPaths.o getFilesize.o isAdministrator.o\
       skipComments.o trimLine.o ugsHeader.o verifyFiles.o

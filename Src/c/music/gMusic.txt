@@ -1,4 +1,4 @@
-Directory scan of g:\Music
+Directory scan of g:\music
 #
   10,000 Maniacs  {whr}
     Campfire Songs  Disc 1  (flac)
@@ -5276,4 +5276,5 @@ Z
     XXX  (flac)
   ZZZ Unsorted
     Various Artists  (mixed)
-Number of Directories: 5277
+Number of Directories:  5277
+Number of Files      : 66335

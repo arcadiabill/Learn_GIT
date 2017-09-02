@@ -2,11 +2,11 @@
 
 int main(void)
 {
-  int n;
-  
-  n = 6;
-  printf("The Factorial of %d is %d.", n, factTail(n, 1));
-  return 0;
+   int n;
+
+   n = 6;
+   printf("The Factorial of %d is %d.", n, factTail(n, 1));
+   return 0;
 }
 
 int factTail(int n, int a)

@@ -8,17 +8,17 @@ int main(int argc, char **argv)
 {
    struct stat fileStat;
 
-   if(argc != 2){
+   if(argc != 2) {
       puts("Usage: stat filename (show status of filename.");
       return 1;
    }
-      
+
    errno = 0;                // Global error variable
-   if(stat(argv[1],&fileStat) < 0){
+   if(stat(argv[1],&fileStat) < 0) {
       perror("Error");
       return errno;
    }
-       
+
 
    printf("\nInformation for %s\n",argv[1]);
    printf("---------------------------\n");

@@ -13,39 +13,32 @@ char *argv[];
    int i;
    unsigned long int w_total = 0, l_total = 0, c_total = 0;
 
-   if(argc < 2)
-   {
+   if(argc < 2) {
       printf("Usage: wordCount filename [,filename, filename, etc.]\n");
       return -1;
    }
 
    printf ("   lines    words    bytes file\n");
-   for (i = 1; i < argc; ++i)
-   {
+   for (i = 1; i < argc; ++i) {
       FILE *input;
       unsigned long int w_cnt, l_cnt, c_cnt;
       int c, inword = 0;
 
-      if ((input = fopen(argv[i], "rb")) == NULL)
-      {
+      if ((input = fopen(argv[i], "rb")) == NULL) {
          printf ("wc: cannot open %s\n", argv[i]);
          continue;
       }
 
       w_cnt = l_cnt = c_cnt = 0;
-      while ((c = fgetc(input)) != EOF)
-      {
+      while ((c = fgetc(input)) != EOF) {
          if (c == (int) '\n')
             ++l_cnt;
-         if (!isspace(c))
-         {
-            if (inword == 0)
-            {
+         if (!isspace(c)) {
+            if (inword == 0) {
                inword = 1;
                ++w_cnt;
             }
-         }
-         else
+         } else
             inword = 0;
          ++c_cnt;
       }
@@ -55,8 +48,7 @@ char *argv[];
       w_total += w_cnt;
       c_total += c_cnt;
    }
-   if (argc > 2)
-   {
+   if (argc > 2) {
       printf ("--------------------------------------\n%8lu%8lu%8lu total",
               l_total, w_total, c_total);
    }
