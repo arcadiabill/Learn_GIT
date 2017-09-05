@@ -1,0 +1,12 @@
+Library : libwhr.a
+Location: h:\src\lib
+Sources : h:\src\lib\sources
+
+Functions:
+int    doesFileExist( const char *filename)  Same as FileExists()
+int    FileExists(const char *filename)  Same as doesFileExist()
+long   getFileSize(const char *filename)
+size_t SpacesBefore(const char *string)
+char  *ltrim(char *string)
+char  *rtrim(char *string)
+char  *trim(char *string)

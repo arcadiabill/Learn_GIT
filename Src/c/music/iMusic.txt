@@ -356,6 +356,7 @@ B
   Beastie Boys  {whr}
     Check Your Head  (128)
     Hello Nasty  (flac)
+    Hot Sauce Committee Part Two  (flac)
     Ill Communication  (flac)
     Licensed to Ill  (flac)
     Paul's Boutique  (flac)
@@ -954,6 +955,8 @@ C
     Recollection  The Best of Concrete Blonde  (192)
   Connick, Harry Jr
     When Harry Met Sally  (128)
+  Cooder, Ry  {whr}
+    I, Flathead  (flac)
   Cooke, Sam  {whr}
     Portrait of a Legend 1951-1964  (flac)
     The Best of Sam Cooke  (flac)
@@ -1281,6 +1284,12 @@ D
     The Hit Singles Collection  (flac)
   Daughtry  {whr}
     Daughtry  (flac)
+  Dave Brubeck Quartet, The  {whr}
+    Countdown; Time in Outer Space  (flac)
+    For All Time, Disc 4  (flac)
+    Time Changes  (flac)
+    Time Further Out  (flac)
+    Time Out  (flac)
   Dave Matthews Band  {whr}
     Before These Crowded Streets  (flac)
     Big Whiskey And The GrooGrux King  (flac)
@@ -1482,7 +1491,9 @@ D
     A Blessing And A Curse  (flac)
     Brighter Than Creation's Dark  (flac)
     Decoration Day  (flac)
+    English Oceans  (flac)
     Go-Go Boots  (flac)
+    The Big To-Do  (flac)
   Dropkick Murphys  {whr}
     11 Short Stories of Pain & Glory  (flac)
   Duffy  {whr}
@@ -2240,6 +2251,8 @@ J
     Ghetto Love  (320)
     Still Ghetto [Clean]  (320)
     The Makings of a Man  (flac)
+  Jamal, Ahmad  {whr}
+    Chicago Revisited; Live At Joe Segal's Jazz Showcase  (flac)
   James, Etta  {whr}
     Blue Gardenia  (flac)
     The Right Time  (flac)
@@ -2582,6 +2595,8 @@ L
   Lambert, Miranda  {whr}
     The Weight of These Wings  Disc 1  (flac)
     The Weight of These Wings  Disc 2  (flac)
+  Landreth, Sonny  {whr}
+    Grant Street  (flac)
   Lang, Peter  {whr}
     Mozart; Piano Concertos K.467 'Elvira Madigan' & K.466  (flac)
   Lauper, Cyndi  {whr}
@@ -5089,6 +5104,8 @@ W
     One of the Boys  (flac)
   Wilson, Jackie  {whr}
     20 Greatest Hits  (flac)
+  Wilson, Nancy  {whr}
+    Turned To Blue  (flac)
   Winston, George  {whr}
     A George Winston Sampler  (128)
     December  (flac)
@@ -5276,5 +5293,8 @@ Z
     XXX  (flac)
   ZZZ Unsorted
     Various Artists  (mixed)
-Number of Directories:  5277
-Number of Files      : 66335
+
+Number of Artists    :  1131
+Number of Albums     :  4106
+Number of Directories:  5294
+Number of Files      : 66494
