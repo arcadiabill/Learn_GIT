@@ -4,7 +4,8 @@
  │
  │ Purpose : List directory tree starting from DirName. If directory
  │           not given, start from current directory. Optionally list
- │           files as well as directories.
+ │           files as well as directories. Shows number of Artists &
+ │           number of Albums at the end.
  │
  │ Params  : -h, --help     shows help
  │           -f, --files    lists files as well as directories
@@ -24,11 +25,12 @@
  │           Wiley Publishing Pages 122-126
  │           Modified to work with Windows
  │
+ │ Compile : gcc ListDir.c -o ListDir
+ │
  │   Ver     Date     Who  Description of the Change
  │     0  07-20-2016  whr  Initial release
  │     1  09-01-2017  whr  It was called PrintDir, Minor cleanup &
  │                         added cmd line options.
- │
  └────────────────────────────────────────────────────────────────────
  */
 #include <dirent.h>
@@ -43,11 +45,13 @@
 #define true       1
 #define false      0
 
-int nDIRs  = 0;         // Global parameters
-int nFILES = 0;
+int nDIRs    = 0;       // Global parameters
+int nFILES   = 0;
+int nArtists = 0;
+int nAlbums  = 0;
 
-void usage();
-void ListDir(char *dir, int indent, int listFiles);
+void   usage();
+void   ListDir(char *dir, int indent, int listFiles);
 
 int
 main(int argc, char* argv[])
@@ -122,8 +126,10 @@ main(int argc, char* argv[])
    cntr = nDIRs > nFILES ? nDIRs : nFILES;
    cntr = strlen(itoa(cntr, Buffer, 10));
 
-   printf("Number of Directories: %*d\n", cntr, nDIRs);
-   printf("Number of Files      : %*d\n", cntr, nFILES);
+   printf("\nNumber of Artists    : %*d\n", cntr, nArtists);
+   printf(  "Number of Albums     : %*d\n", cntr, nAlbums);
+   printf(  "Number of Directories: %*d\n", cntr, nDIRs);
+   printf(  "Number of Files      : %*d\n", cntr, nFILES);
 
    exit(EXIT_SUCCESS);
 }
@@ -169,12 +175,16 @@ ListDir(char *dir, int indent, int listFiles)
    chdir(dir);
    while((entry = readdir(dp)) != NULL) {
       stat(entry->d_name,&statbuf);
-      if(S_ISDIR(statbuf.st_mode)) {
 
+      if(S_ISDIR(statbuf.st_mode)) {
          /* Found a directory, but ignore . and .. */
          if(strcmp( ".",entry->d_name) == 0 ||
             strcmp("..",entry->d_name) == 0)
             continue;
+
+         // New Directory -- Artist with have 2 spaces before name
+         if(spaces == 2) ++nArtists;
+         if(spaces == 4) ++nAlbums;
          printf("%*s%s\n", spaces,"",entry->d_name);
 
          /* Recurse at a new indent level */
@@ -183,6 +193,7 @@ ListDir(char *dir, int indent, int listFiles)
       } else {
          if (listFiles)
             printf("%*s%s\n", spaces,"",entry->d_name);
+
          nFILES++;
       }
    }
